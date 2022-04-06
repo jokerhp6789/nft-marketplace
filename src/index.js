@@ -1,10 +1,14 @@
-import { render } from "react-dom";
-import 'bootstrap/dist/css/bootstrap.css'
-import App from './frontend/components/App';
-import * as serviceWorker from './serviceWorker';
+import {render} from "react-dom";
+import App from "./frontend/App";
+import * as serviceWorker from "./serviceWorker";
+import "aos/dist/aos.css";
+import "./frontend/styles/reset.scss";
+import AOS from "aos";
+
+AOS.init();
 
 const rootElement = document.getElementById("root");
-render( <App />, rootElement);
+render(<App/>, rootElement);
 
 
 // If you want your app to work offline and load faster, you can change
