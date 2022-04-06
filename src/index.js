@@ -1,9 +1,9 @@
 import {render} from "react-dom";
-import App from "./frontend/App";
 import * as serviceWorker from "./serviceWorker";
 import "aos/dist/aos.css";
-import "./frontend/styles/reset.scss";
+import "frontend/styles/reset.scss";
 import AOS from "aos";
+import App from "./frontend/App";
 
 AOS.init();
 
