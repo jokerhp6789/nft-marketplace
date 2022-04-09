@@ -1,0 +1,266 @@
+@import "../../styles/index";
+
+.card {
+  &-container {
+    width: 330px;
+    background-color: $primary-color;
+    padding: 20px;
+    box-shadow: $box-shadow;
+    border-radius: 20px;
+    transition: $transition;
+
+    &:hover {
+      transform: translateY(-6px);
+
+      .card-media a img {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &-media {
+    width: calc(330px - 40px);
+    height: calc(330px - 40px);
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+
+    a img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: $transition;
+    }
+  }
+
+  &-media__place-bid {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: placeBitBtnAnimation .5s;
+
+    .btn-container {
+      background-color: $white-color;
+      border-color: $white-color;
+      color: #000000;
+
+      svg {
+        color: $blue;
+      }
+
+      &:hover {
+        background-color: $blue;
+        color: $white-color;
+        border-color: $blue;
+
+        svg {
+          color: $white-color;
+        }
+      }
+    }
+  }
+
+  &-count__down-container {
+    width: 100%;
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    @include flexBox(row, center, center);
+  }
+
+  &-badge__container {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    z-index: 1;
+  }
+
+  &-content {
+    &__title {
+      margin-top: 24px;
+      width: 100%;
+
+      .title {
+        width: 70%;
+        text-align: left;
+
+        a {
+          width: 100%;
+          display: inline-block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          text-decoration: none;
+          white-space: nowrap;
+          color: $white-color;
+          transition: $transition;
+          @include font-size($fz-md, $fz-lg);
+
+          &:hover {
+            color: $blue;
+          }
+        }
+      }
+
+      .tags {
+        @include flexBox(row, flex-end, center);
+        width: 30%;
+
+        p {
+          width: 49px;
+          height: 24px;
+          line-height: 24px;
+          text-align: center;
+          font-weight: bold;
+          font-size: $fz-xxs;
+          color: $white-color;
+          background-color: $blue;
+          border-radius: 10px;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    &__info {
+      margin-top: 12px;
+      display: grid;
+      grid-template-columns: 45px 1fr 1fr;
+    }
+
+    &__avt img {
+      border-radius: 12px;
+    }
+
+    &__creator {
+      margin-left: 12px;
+      @include flexBox(column, center, flex-start);
+
+      .title {
+        @include font-size($fz-xxs, $fz-xs);
+        color: $white-color;
+      }
+
+      .creator-name {
+        @include font-size($fz-sm, $fz-md);
+        font-weight: 600;
+        text-decoration: none;
+        color: $white-color;
+        transition: $transition;
+
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
+
+    &__price {
+      @include flexBox(column, center, flex-end);
+
+      .title {
+        @include font-size($fz-xxs, $fz-xs);
+        color: $white-color;
+      }
+
+      .price {
+        font-weight: 600;
+        @include font-size($fz-md, $fz-lg);
+        color: $white-color;
+        margin-top: 6px;
+      }
+    }
+  }
+
+  &-place__bid {
+    margin-top: 24px;
+    @include flexBox(row, center, center);
+
+    &-btn, &-history {
+      flex: 1;
+    }
+
+    &-history {
+      text-align: right;
+
+      a {
+        text-decoration: none;
+        border: none;
+        outline: none;
+        color: $white-color;
+
+        svg {
+          @include font-size($fz-md, $fz-lg);
+          margin-right: 6px;
+        }
+
+        span {
+          @include font-size($fz-sm, $fz-md);
+          font-weight: 600;
+          transition: $transition;
+        }
+
+        &:hover span {
+          color: $blue;
+        }
+      }
+    }
+  }
+}
+
+
+.count-down {
+  &__container {
+    width: 170px;
+    background-color: $primary-color;
+    border-radius: 12px;
+    padding: 6px 12px;
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__icon {
+    margin-right: 6px;
+
+    svg {
+      color: $blue;
+      @include font-size($fz-md, $fz-xl);
+    }
+  }
+
+  &__time {
+    color: $white-color;
+    @include font-size($fz-sm, $fz-md);
+  }
+}
+
+.badge-button {
+  &__container {
+    background-color: $primary-color;
+    border-radius: 6px;
+    width: 60px;
+    padding: 3px;
+    @include font-size($fz-xs, $fz-sm);
+    @include flexBox(row, center, center);
+    color: $white-color;
+  }
+
+  &__icon {
+    margin-right: 6px;
+  }
+
+  &__icon svg, &__number-of__like span {
+    font-weight: 400;
+  }
+}
+
+@keyframes placeBitBtnAnimation {
+  from {
+    top: 60%;
+  }
+  to {
+    top: 50%;
+  }
+}

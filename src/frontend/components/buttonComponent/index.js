@@ -5,11 +5,12 @@ const ButtonComponent = ({
                            btnName,
                            btnIcon,
                            btnEvent,
-                           isPrimary
+                           isPrimary = true
                          }) => {
   return (
     <>
-      <button className={`btn-container ${btnName && "btn-space"}`} onClick={btnEvent}>{btnIcon} {btnName}</button>
+      <button className={`btn-container ${btnName && "btn-space"} ${isPrimary && "primary-btn"}`}
+              onClick={btnEvent}>{btnIcon} {btnName}</button>
     </>
   );
 };

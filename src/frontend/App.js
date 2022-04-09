@@ -1,4 +1,3 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/App.scss";
 
 import {
@@ -18,6 +17,7 @@ import {useState} from "react";
 import {ethers} from "ethers";
 import {Spinner} from "react-bootstrap";
 import HeaderNavigation from "./components/headerNavigation";
+import CardComponent from "./components/card";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -59,19 +59,7 @@ function App() {
           <HeaderNavigation web3Handler={web3Handler} account={account}/>
         </>
         <div>
-          {
-            [...new Array(30)].map(() => (
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt magnam natus perferendis quo
-                recusandae reprehenderit sequi? Accusamus amet, aspernatur corporis exercitationem illo ipsam, molestiae
-                nam pariatur perspiciatis quibusdam quo rerum ut voluptates. Harum laboriosam quia quos temporibus.
-                Aliquam aliquid aut dolor doloremque earum exercitationem impedit ipsam, minima omnis pariatur suscipit
-                vitae. Dolor dolores eligendi ex inventore iure, libero nihil, perferendis quibusdam repellendus,
-                sapiente sequi ut voluptate. A ab accusamus, adipisci asperiores doloremque doloribus expedita fugit hic
-                illo impedit ipsa minima molestiae molestias omnis perspiciatis quibusdam recusandae tempore tenetur
-                veritatis voluptates! Impedit nemo nulla porro? Aliquam consequatur culpa necessitatibus provident
-                quaerat.</p>
-            ))
-          }
+          <CardComponent/>
           {/*{loading ? (*/}
           {/*  <div style={{*/}
           {/*    display: "flex",*/}
