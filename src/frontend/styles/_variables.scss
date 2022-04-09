@@ -6,7 +6,7 @@ $blue: #5142FC;
 $orange: #FFBD0C;
 
 $gradient-color: linear-gradient(-45deg, #E250E5, #4B50E6, #E250E5, #4B50E6);
-$box-shadow: 0px 3px 16px rgb(47 83 109 / 12%);
+$box-shadow: 0px 3px 16px rgba(47, 83, 109, 12%);
 
 $primary-border: 2px solid $blue;
 
@@ -18,3 +18,5 @@ $fz-md: 16px;
 $fz-lg: 18px;
 $fz-xl: 20px;
 $fz-xxl: 22px;
+
+$transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
