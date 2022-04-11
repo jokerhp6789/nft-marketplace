@@ -1,0 +1,181 @@
+@import "../../styles/index";
+
+.banner {
+  &-component {
+    background-color: $bg-section;
+    position: relative;
+  }
+
+  &-bg__gradient {
+    width: 100%;
+    height: 100%;
+
+    img {
+      position: absolute;
+      z-index: 0;
+    }
+
+    .bg-item {
+      &__0 {
+        top: 0;
+        left: 0;
+      }
+
+      &__1 {
+        bottom: 0;
+        right: 0;
+      }
+
+      &__2 {
+        top: 0;
+        right: 0;
+      }
+    }
+  }
+
+  @include mobile {
+    &-container {
+      min-height: 100vh;
+    }
+
+    &-bg__gradient {
+      display: none;
+    }
+  }
+
+  @include tablet {
+    &-container {
+      min-height: unset;
+    }
+  }
+  @include desktop {
+    &-container {
+      min-height: unset;
+    }
+  }
+  @include wide-desktop {
+    &-container {
+      min-height: 100vh;
+    }
+  }
+}
+
+.banner-left {
+  &__side {
+    @include flexBox(column, center, flex-start);
+    color: $white-color;
+    z-index: 1;
+
+    .gradient-text span {
+      color: #14141f;
+      background: linear-gradient(-45deg, #E250E5, #4B50E6, #E250E5, #4B50E6);
+      background-size: 100% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-stroke: 3px transparent;
+    }
+  }
+
+  &__side-heading {
+    font-weight: 600;
+    font-size: $fz-heading;
+    text-align: left;
+  }
+
+  &__side-sub__heading {
+    margin-top: 12px;
+    margin-bottom: 24px;
+    @include font-size(20px, $fz-xl);
+    text-align: left;
+  }
+
+  &__btn {
+    .btn-container:last-child {
+      margin-left: 12px;
+    }
+  }
+
+  @include smallScreen {
+    &__side-heading {
+      font-size: 40px;
+    }
+  }
+  @include mobile {
+    &__side-heading:nth-child(2) {
+      font-size: 40px;
+    }
+  }
+}
+
+.banner-right {
+  &__side {
+    position: relative;
+    @include flexBox(row, center, center);
+  }
+
+  &__container {
+    @include flexBox(row, center, center);
+
+    &-sub__bg {
+      position: absolute;
+      max-width: 100%;
+      height: auto;
+      text-align: left;
+      z-index: 0;
+    }
+
+    &-main__bg {
+      vertical-align: middle;
+      z-index: 1;
+    }
+
+    &-sub__bg, &-main__bg {
+      animation: threeDAnimation 10s infinite linear;
+    }
+
+    @include desktop {
+      &-main__bg {
+        width: 90%;
+      }
+    }
+  }
+
+  @include mobile {
+    &__side {
+      display: none;
+    }
+    &__container {
+      margin-top: 36px;
+    }
+  }
+  @include tablet {
+    &__container {
+      margin-top: 36px;
+    }
+  }
+  @include desktop {
+    &__container {
+      margin-top: 36px;
+    }
+  }
+  @include wide-desktop {
+    &__container {
+      margin-top: unset;
+    }
+  }
+}
+
+@keyframes threeDAnimation {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+

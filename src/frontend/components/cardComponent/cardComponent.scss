@@ -38,7 +38,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    animation: placeBitBtnAnimation .5s;
+    animation: upDownAnimation .5s;
 
     .btn-container {
       background-color: $white-color;
@@ -256,7 +256,7 @@
   }
 }
 
-@keyframes placeBitBtnAnimation {
+@keyframes upDownAnimation {
   from {
     top: 60%;
   }
