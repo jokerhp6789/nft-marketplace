@@ -1,17 +1,27 @@
-import React from "react";
+import "./titleComponent.scss";
 
-const PrimaryTitleComponent = ({
-                                 titleText,
-                                 isHasExplore
-                               }) => {
+import React from "react";
+import {Container} from "react-bootstrap";
+
+const TitleComponent = ({
+                          titleText,
+                          isHasExplore,
+                          exploreUrl
+                        }) => {
   return (
-    <div className="title__container">
+    <Container fluid className="title-container">
       <div className="title-left__side">
-        <h1 className="title-text">{titleText}</h1>
+        <h2 className="title-text">{titleText}</h2>
       </div>
-      <div className="title-right__side"></div>
-    </div>
+      {
+        isHasExplore && (
+          <div className="title-right__side">
+            <a href={exploreUrl}>EXPLORE MORE</a>
+          </div>
+        )
+      }
+    </Container>
   );
 };
 
-export default PrimaryTitleComponent;
+export default TitleComponent;

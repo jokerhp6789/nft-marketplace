@@ -1,0 +1,58 @@
+@import "../../styles/index";
+
+.title {
+  &-container {
+    @include flexBox(row, space-between, center);
+  }
+
+  &-left__side {
+    .title-text {
+      color: $white-color;
+      text-align: left;
+      @include font-size($fz-xxl, $fz-heading-h2);
+      text-transform: capitalize;
+      font-weight: 600;
+    }
+  }
+
+
+  &-right__side a {
+    color: $white-color;
+    font-size: $fz-sm;
+    text-decoration: none;
+    background: linear-gradient(to right, #E250E5, #4B50E6, #E250E5);
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-weight: 700;
+    background-size: 200% 200%;
+    animation: changeColorOnHover 2s ease-in-out infinite;
+    transition: color .2s ease-in-out;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(216.56deg, #E250E5 5.32%, #4B50E6 94.32%);
+    }
+
+    &:hover {
+      color: rgba(0, 0, 0, 0);
+    }
+  }
+}
+
+@keyframes changeColorOnHover {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}

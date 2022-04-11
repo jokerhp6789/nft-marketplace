@@ -4,6 +4,7 @@ import {useState, useEffect} from "react";
 import {ethers} from "ethers";
 import {Row, Col, Card, Button, Container} from "react-bootstrap";
 import BannerComponent from "../bannerComponent";
+import LiveAuctionsComponent from "../liveAuctionsComponent";
 
 const HomeComponent = ({
                          marketplace,
@@ -48,14 +49,15 @@ const HomeComponent = ({
   useEffect(() => {
     loadMarketplaceItems();
   }, []);
-  if (loading) return (
-    <main style={{padding: "1rem 0"}}>
-      <h2>Loading...</h2>
-    </main>
-  );
+  // if (loading) return (
+  //   <main style={{padding: "1rem 0"}}>
+  //     <h2>Loading...</h2>
+  //   </main>
+  // );
   return (
     <Container fluid className="home-component">
       <BannerComponent/>
+      <LiveAuctionsComponent/>
     </Container>
     // <div className="flex justify-center">
     //   {items.length > 0 ?

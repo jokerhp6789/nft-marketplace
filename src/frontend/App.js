@@ -59,7 +59,7 @@ function App() {
           <HeaderNavigation web3Handler={web3Handler} account={account}/>
         </>
         <div>
-          {loading ? (
+          {!loading ? (
             <div style={{
               display: "flex",
               justifyContent: "center",
