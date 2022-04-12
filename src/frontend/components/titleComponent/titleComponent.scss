@@ -4,6 +4,8 @@
   &-container {
     @include flexBox(row, space-between, center);
     margin-bottom: 24px;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   &-left__side {

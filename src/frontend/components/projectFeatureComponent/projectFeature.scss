@@ -1,0 +1,62 @@
+@import "../../styles/index";
+
+.project-feature {
+  &__container {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(2, 1fr);
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    @include wide-desktop {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+.project-feature__item .feature-item {
+  &__header {
+    margin-bottom: 24px;
+
+    &-container {
+      width: 60px;
+      height: 60px;
+      border-radius: 18px;
+      @include flexBox(row, center, center);
+      transition: all 0.8s ease;
+
+      svg {
+        color: $white-color;
+        font-size: $fz-xxl;
+      }
+    }
+  }
+
+  &__content {
+    &-title, &-desc {
+      text-align: left;
+    }
+
+    &-title {
+      font-weight: 600;
+      @include font-size($fz-lg, $fz-xxl);
+      transition: $transition;
+      color: $white-color;
+      margin-bottom: 12px;
+      text-decoration: none;
+
+      &:hover {
+        color: $blue;
+      }
+    }
+
+    &-desc {
+      color: $white-color;
+      @include font-size($fz-xs, $fz-sm);
+    }
+  }
+
+  &:hover .feature-item__header-container {
+    transform: rotateY(360deg);
+  }
+}
