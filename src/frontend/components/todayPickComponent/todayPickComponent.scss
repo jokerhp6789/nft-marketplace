@@ -7,8 +7,16 @@
     display: flex;
     flex-wrap: wrap;
 
-    &-item:not(:first-child) {
-      margin-left: 12px;
+    &-item {
+      .btn-container:hover {
+        border-color: $blue;
+        background-color: transparent;
+        color: $white-color;
+      }
+
+      &:not(:first-child) {
+        margin-left: 12px;
+      }
     }
   }
 

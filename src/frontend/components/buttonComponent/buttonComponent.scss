@@ -8,6 +8,7 @@
   border-radius: 50px;
   background: transparent none repeat scroll 0 0;
   color: $white-color;
+  font-weight: 600;
   @include flexBox(row, center, center);
   transition: $transition;
   @include font-size($fz-xs, $fz-sm);
@@ -18,7 +19,8 @@
   }
 
   &:hover {
-    border-color: $blue;
+    color: #000000;
+    background-color: $white-color;
   }
 
   &.btn-space {
