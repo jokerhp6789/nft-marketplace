@@ -23,6 +23,12 @@
   &-left__side {
     &-item {
       @include font-size($fz-lg, $fz-md);
+      text-align: center;
+      transition: $transition;
+
+      &:hover {
+        color: $blue !important;
+      }
     }
   }
 

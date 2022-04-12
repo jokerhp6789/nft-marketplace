@@ -40,10 +40,29 @@
         width: calc(100% / 2 - 12px);
       }
     }
+    @include wide-desktop {
+      .item {
+        width: calc(100% / 4 - 12px);
+      }
+    }
   }
 
   &__load-more__btn {
     margin-top: 24px;
     @include flexBox(row, center, center);
+  }
+
+  @include mobile {
+    &__sort {
+      &-item {
+        &:nth-child(3) {
+          margin-left: 0;
+        }
+
+        &:nth-child(3), &:nth-child(4) {
+          margin-top: 12px;
+        }
+      }
+    }
   }
 }

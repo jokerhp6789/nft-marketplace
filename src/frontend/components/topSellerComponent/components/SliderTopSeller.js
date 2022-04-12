@@ -8,7 +8,7 @@ export const SliderTopSeller = ({data}) => {
   const sliderRef = useRef(null);
   const currentWindowWidth = useWindowSize();
   
-  const CARD_PER_PAGE = currentWindowWidth < 768 ? 3 : currentWindowWidth <= 498 ? 2 : 5;
+  const CARD_PER_PAGE = (currentWindowWidth < 768 && currentWindowWidth >= 497) ? 3 : currentWindowWidth <= 498 ? 2 : currentWindowWidth > 1070 ? 7 : 5;
   
   const [sliderCurrentWidth, setSliderCurrentWidth] = useState(0);
   
