@@ -18,6 +18,7 @@ import {ethers} from "ethers";
 import {Spinner} from "react-bootstrap";
 import HeaderNavigation from "./components/headerNavigation";
 import CardComponent from "./components/cardComponent";
+import FooterComponent from "./components/footerComponent";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -86,6 +87,9 @@ function App() {
             </Routes>
           )}
         </div>
+        <>
+          <FooterComponent/>
+        </>
       </div>
     </BrowserRouter>
   

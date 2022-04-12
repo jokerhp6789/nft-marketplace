@@ -1,0 +1,156 @@
+@import "../../styles/index";
+
+.footer {
+  &-component {
+    background-color: $bg-section-dark;
+    padding: 72px 0;
+  }
+
+  &-container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  &-logo {
+    img {
+      margin-bottom: 12px;
+    }
+
+    &__desc {
+      color: $white-color;
+      font-size: $fz-sm;
+    }
+  }
+
+  &-menu__title {
+    text-transform: capitalize;
+    color: $white-color;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 24px;
+  }
+
+  &-menu__container {
+    li {
+      &:not(:last-child) {
+        margin-bottom: 12px;
+      }
+
+      a {
+        color: $white-color;
+        text-decoration: none;
+        font-size: $fz-sm;
+        transition: all 0.3s ease-in-out;
+        position: relative;
+
+        &:after {
+          content: '';
+          width: 0;
+          height: 1px;
+          position: absolute;
+          background: $blue;
+          left: 50%;
+          bottom: 0;
+          transform: translateX(-50%);
+          visibility: hidden;
+          opacity: 0;
+          transition: all 0.3s ease-in-out;
+        }
+
+        &:hover {
+          color: $blue;
+
+          &:after {
+            width: 100%;
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  &-social {
+    .subscribe-input {
+      &__container {
+        margin-bottom: 12px;
+        position: relative;
+      }
+
+      &__input {
+        background-color: transparent;
+        border: 1px solid rgba(138, 138, 160, 0.3);
+        border-radius: 10px;
+        width: 100%;
+        padding: 12px 50px 12px 12px;
+        font-size: $fz-sm;
+        color: #8A8AA0;
+      }
+
+      &__btn {
+        border-radius: 0 10px 10px 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: $blue;
+        font-size: 21px;
+        padding: 8px 12px;
+        color: $white-color;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          opacity: .9;
+        }
+      }
+    }
+
+    .social-menu {
+      &__container {
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+          margin-top: 12px;
+
+          &:not(:last-child) {
+            margin-right: 12px;
+          }
+
+          a {
+            background-color: $primary-color;
+            color: $white-color;
+            text-decoration: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            text-align: center;
+            @include flexBox(row, center, center);
+            font-size: 21px;
+            transition: $transition;
+
+            &:hover {
+              background-color: $blue;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include mobile {
+    &-logo {
+      margin-bottom: 24px;
+    }
+    &-my__account, &-resources {
+      width: 50%;
+    }
+    &-company {
+      margin: 24px 0;
+    }
+  }
+  @include tablet {
+    &-logo {
+      margin-bottom: 24px;
+    }
+  }
+}
