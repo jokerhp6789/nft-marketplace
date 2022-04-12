@@ -2,7 +2,7 @@
 
 .card {
   &-container {
-    width: 330px;
+    width: 100%;
     background-color: $primary-color;
     padding: 20px;
     box-shadow: $box-shadow;
@@ -19,8 +19,6 @@
   }
 
   &-media {
-    width: calc(330px - 40px);
-    height: calc(330px - 40px);
     border-radius: 24px;
     overflow: hidden;
     position: relative;
@@ -126,7 +124,7 @@
     &__info {
       margin-top: 12px;
       display: grid;
-      grid-template-columns: 45px 1fr 1fr;
+      grid-template-columns: 45px 1fr auto;
     }
 
     &__avt img {

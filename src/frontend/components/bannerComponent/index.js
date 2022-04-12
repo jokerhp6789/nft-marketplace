@@ -2,7 +2,7 @@ import "./bannerComponent.scss";
 
 import React from "react";
 import {Col, Container, Row} from "react-bootstrap";
-import SubBg from "../../assets/imgs/subBannerBg.png";
+import SubBg from "../../assets/imgs/banner/subBannerBg.png";
 import MainBg from "../../assets/imgs/banner/bannerBg.png";
 import ButtonComponent from "../buttonComponent";
 import {CgFileDocument} from "react-icons/cg";
@@ -16,7 +16,7 @@ const bgGradient = [BgGradient1, BgGradient2, BgGradient3];
 const BannerComponent = () => {
   return (
     <Container fluid className="banner-component">
-      <Container>
+      <Container fluid={"xxl"}>
         <div className="banner-bg__gradient">
           {
             bgGradient.map((val, index) => (

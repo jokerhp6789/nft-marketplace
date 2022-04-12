@@ -2,24 +2,36 @@ import "./cardComponent.scss";
 
 import React, {useState} from "react";
 import {Badge, CountDown} from "./components";
-import ExampleImg from "../../assets/imgs/exampleImg.jpeg";
-import UserAvt from "../../assets/imgs/creatorImg.jpeg";
+import ExampleImg from "../../assets/imgs/liveAuctions/exampleImg4.jpeg";
 import ButtonComponent from "../buttonComponent";
 import {MdShoppingBag} from "react-icons/md";
 import {BiRefresh} from "react-icons/bi";
 
-const CardComponent = ({isHidePlaceBid = true}) => {
+const CardComponent = ({
+                         likesOfItem,
+                         itemImg,
+                         itemTitle,
+                         itemUrl,
+                         itemCountDown,
+                         itemUserAvt,
+                         itemUserName,
+                         itemUserProfileUrl,
+                         itemPrice,
+                         itemHistoryUrl,
+                         refItem,
+                         isHidePlaceBid = true
+                       }) => {
   const [isShowPlaceBid, setIsShowPlaceBid] = useState(false);
   return (
-    <div className="card-container"
+    <div ref={refItem} className="card-container"
          onMouseEnter={() => setIsShowPlaceBid(true)}
          onMouseLeave={() => setIsShowPlaceBid(false)}>
       <div className="card-media">
         <div className="card-badge__container">
-          <Badge numberOfLike={200}/>
+          <Badge numberOfLike={likesOfItem}/>
         </div>
         <a href="#">
-          <img src={ExampleImg} alt=""/>
+          <img src={itemImg} alt=""/>
         </a>
         {
           (isHidePlaceBid && isShowPlaceBid) && (
@@ -29,13 +41,13 @@ const CardComponent = ({isHidePlaceBid = true}) => {
           )
         }
         <div className="card-count__down-container">
-          <CountDown date="Jul 21, 2022 18:00:00"/>
+          <CountDown date={itemCountDown}/>
         </div>
       </div>
       <div className="card-content">
         <div className="card-content__title d-flex">
           <div className="title">
-            <a href="#">Triumphant Awakening Contemplates</a>
+            <a href={itemUrl}>{itemTitle}</a>
           </div>
           <div className="tags">
             <p>BSC</p>
@@ -43,15 +55,15 @@ const CardComponent = ({isHidePlaceBid = true}) => {
         </div>
         <div className="card-content__info">
           <div className="card-content__avt">
-            <img src={UserAvt} alt=""/>
+            <img src={itemUserAvt} alt=""/>
           </div>
           <div className="card-content__creator">
             <h6 className="title">Creator</h6>
-            <a href="#" className="creator-name">SalvadorDali</a>
+            <a href={itemUserProfileUrl} className="creator-name">{itemUserName}</a>
           </div>
           <div className="card-content__price">
             <h6 className="title">Current Bid</h6>
-            <p className="price">4.96 ETH</p>
+            <p className="price">{itemPrice}</p>
           </div>
         </div>
       </div>
@@ -62,7 +74,7 @@ const CardComponent = ({isHidePlaceBid = true}) => {
               <ButtonComponent btnName="Place Bid" btnIcon={<MdShoppingBag/>}/>
             </div>
             <div className="card-place__bid-history">
-              <a href="#">
+              <a href={itemHistoryUrl}>
                 <BiRefresh/>
                 <span>View History</span>
               </a>
