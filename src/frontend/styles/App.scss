@@ -1,0 +1,73 @@
+@import "./index";
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.banner-component, .live-auctions, .top-seller {
+  background-color: $bg-section;
+}
+
+.live-auctions, .top-seller {
+  padding-top: 60px;
+}
+
+.slider {
+  &-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  &-inner {
+    margin: auto;
+    position: relative;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+  }
+
+  &-track {
+    display: flex;
+    padding: 12px 0;
+    transform: translateX(- calc(328px + 18px));
+    transition: $transition;
+
+    .item {
+      margin-left: 12px;
+    }
+  }
+
+  &-direction {
+    @include flexBox(row, center, center);
+    margin-top: 12px;
+
+    &__step {
+      &:not(:first-child) {
+        margin-left: 12px;
+      }
+    }
+
+    &__step-item {
+      border: 1px solid $white-color;
+      background-color: transparent;
+      width: 8px;
+      height: 8px;
+      border-radius: 100%;
+      cursor: pointer;
+    }
+
+    &__active {
+      width: 16px;
+      height: 16px;
+      border-radius: 100%;
+      background-color: transparent;
+      border: 1px solid $white-color;
+      @include flexBox(row, center, center);
+
+      .slider-direction__step-item {
+        background-color: $white-color;
+      }
+    }
+  }
+}

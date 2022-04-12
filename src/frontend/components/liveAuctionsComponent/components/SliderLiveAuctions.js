@@ -1,9 +1,11 @@
-import CardComponent from "../../cardComponent";
+import React, {useLayoutEffect, useRef, useState} from "react";
 import {Container} from "react-bootstrap";
-import {useLayoutEffect, useRef, useState} from "react";
 import {useWindowSize} from "../../../shared/helpers";
+import CardComponent from "../../cardComponent";
 
-export const SliderSwiper = ({data = [...new Array(20)]}) => {
+export const SliderLiveAuctions = ({
+                        data
+                      }) => {
   const cardRef = useRef(null);
   const sliderRef = useRef(null);
   const currentWindowWidth = useWindowSize();
@@ -55,8 +57,7 @@ export const SliderSwiper = ({data = [...new Array(20)]}) => {
                                itemUserName={val.creatorName}
                                itemTitle={val.title}
                                likesOfItem={val.numberOfLike}
-                               itemCountDown={val.countdown}
-                               refItem={cardRef}/>
+                               itemCountDown={val.countdown}/>
               </div>
               //     )
               //   }

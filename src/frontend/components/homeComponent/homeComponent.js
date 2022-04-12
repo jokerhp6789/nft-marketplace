@@ -5,6 +5,7 @@ import {ethers} from "ethers";
 import {Row, Col, Card, Button, Container} from "react-bootstrap";
 import BannerComponent from "../bannerComponent";
 import LiveAuctionsComponent from "../liveAuctionsComponent";
+import TopSellerComponent from "../topSellerComponent";
 
 const HomeComponent = ({
                          marketplace,
@@ -58,6 +59,7 @@ const HomeComponent = ({
     <Container fluid className="home-component">
       <BannerComponent/>
       <LiveAuctionsComponent/>
+      <TopSellerComponent/>
     </Container>
     // <div className="flex justify-center">
     //   {items.length > 0 ?

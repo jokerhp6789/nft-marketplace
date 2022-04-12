@@ -1,1 +1,1 @@
-export * from "./SliderSwiper";
+export * from "./SliderLiveAuctions";
