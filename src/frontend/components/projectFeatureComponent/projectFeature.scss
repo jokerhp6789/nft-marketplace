@@ -5,6 +5,7 @@
     display: grid;
     gap: 24px;
     grid-template-columns: repeat(2, 1fr);
+    padding-bottom: 72px;
     @include mobile {
       grid-template-columns: repeat(1, 1fr);
     }
