@@ -10,7 +10,7 @@
   color: $white-color;
   @include flexBox(row, center, center);
   transition: $transition;
-  @include font-size($fz-sm, $fz-md);
+  @include font-size($fz-xs, $fz-sm);
 
   svg {
     @include font-size($fz-md, $fz-xl);

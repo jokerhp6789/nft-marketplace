@@ -42,7 +42,7 @@ const TodayPickComponent = () => {
                                itemUserProfileUrl={val.ownerProfileUrl}
                                isHidePlaceBid={false}
                                isComing={val.isComing}
-                               itemUserAvt={val.img}
+                               itemUserAvt={val.ownerAvt}
                                isOwner={true}
                 />
               </div>
