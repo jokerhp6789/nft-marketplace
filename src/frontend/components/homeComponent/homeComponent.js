@@ -6,6 +6,7 @@ import {Row, Col, Card, Button, Container} from "react-bootstrap";
 import BannerComponent from "../bannerComponent";
 import LiveAuctionsComponent from "../liveAuctionsComponent";
 import TopSellerComponent from "../topSellerComponent";
+import TodayPickComponent from "../todayPickComponent";
 
 const HomeComponent = ({
                          marketplace,
@@ -60,6 +61,7 @@ const HomeComponent = ({
       <BannerComponent/>
       <LiveAuctionsComponent/>
       <TopSellerComponent/>
+      <TodayPickComponent/>
     </Container>
     // <div className="flex justify-center">
     //   {items.length > 0 ?

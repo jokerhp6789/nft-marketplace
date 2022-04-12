@@ -4,11 +4,11 @@
   display: none;
 }
 
-.banner-component, .live-auctions, .top-seller {
+.banner-component, .live-auctions, .top-seller, .today-pick {
   background-color: $bg-section;
 }
 
-.live-auctions, .top-seller {
+.live-auctions, .top-seller, .today-pick {
   padding-top: 60px;
 }
 

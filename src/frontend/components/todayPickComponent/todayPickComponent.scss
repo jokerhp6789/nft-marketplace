@@ -1,0 +1,41 @@
+@import "../../styles/index";
+
+.today-pick {
+  min-height: 100vh;
+
+  &__sort {
+    display: flex;
+    flex-wrap: wrap;
+
+    &-item:not(:first-child) {
+      margin-left: 12px;
+    }
+  }
+
+  &__items-container {
+    margin-top: 36px;
+    display: inline-flex;
+    gap: 12px;
+    flex-wrap: wrap;
+
+    .item {
+      width: calc(100% / 3 - 12px);
+    }
+
+    @include mobile {
+      .item {
+        width: 100%;
+      }
+    }
+    @include tablet {
+      .item {
+        width: calc(100% / 2 - 12px);
+      }
+    }
+  }
+
+  &__load-more__btn {
+    margin-top: 24px;
+    @include flexBox(row, center, center);
+  }
+}

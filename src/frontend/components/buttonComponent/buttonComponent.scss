@@ -17,6 +17,10 @@
     color: $white-color;
   }
 
+  &:hover {
+    border-color: $blue;
+  }
+
   &.btn-space {
     padding: 15px 20px;
 
@@ -27,15 +31,15 @@
 
   &.primary-btn {
     border: $primary-border;
-  }
 
-  &:hover {
-    background-color: $white-color;
-    border-color: $white-color;
-    color: $blue;
-
-    svg {
+    &:hover {
+      background-color: $white-color;
+      border-color: $white-color;
       color: $blue;
+
+      svg {
+        color: $blue;
+      }
     }
   }
 }

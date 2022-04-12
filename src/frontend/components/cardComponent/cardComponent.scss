@@ -73,6 +73,21 @@
     right: 12px;
     top: 12px;
     z-index: 1;
+
+    &.card-coming__badge {
+      background-color: $orange;
+      width: fit-content;
+      color: #000000;
+      left: 12px;
+      padding: 3px 12px;
+      border-radius: 24px;
+
+      p {
+        font-size: $fz-sm;
+        font-weight: 600;
+        text-transform: capitalize;
+      }
+    }
   }
 
   &-content {

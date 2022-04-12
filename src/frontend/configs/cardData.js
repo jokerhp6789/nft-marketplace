@@ -18,8 +18,7 @@ export const cardData = [
     currentBid: "4.89 ETH",
     countdown: "Jul 21, 2022 18:00:00",
     numberOfLike: 100,
-    creatorProfileUrl: "#",
-    historyUrl: "#"
+    creatorProfileUrl: "#"
   },
   {
     title: "Triumphant Awakening Contemplates",
@@ -30,8 +29,7 @@ export const cardData = [
     currentBid: "4.89 ETH",
     countdown: "Jul 21, 2022 18:00:00",
     numberOfLike: 220,
-    creatorProfileUrl: "#",
-    historyUrl: "#"
+    creatorProfileUrl: "#"
   },
   {
     title: "Living Vase 01 by Lanza Contemplates",
@@ -42,8 +40,7 @@ export const cardData = [
     currentBid: "4.89 ETH",
     countdown: "Jul 21, 2022 18:00:00",
     numberOfLike: 90,
-    creatorProfileUrl: "#",
-    historyUrl: "#"
+    creatorProfileUrl: "#"
   },
   {
     title: "Flame Dress' by Balmain Contemplates",
@@ -54,8 +51,7 @@ export const cardData = [
     currentBid: "4.89 ETH",
     countdown: "Jul 21, 2022 18:00:00",
     numberOfLike: 145,
-    creatorProfileUrl: "#",
-    historyUrl: "#"
+    creatorProfileUrl: "#"
   },
   {
     title: "Hamlet Contemplates Contemplates ",
@@ -66,8 +62,7 @@ export const cardData = [
     currentBid: "4.89 ETH",
     countdown: "Jul 21, 2022 18:00:00",
     numberOfLike: 100,
-    creatorProfileUrl: "#",
-    historyUrl: "#"
+    creatorProfileUrl: "#"
   },
   {
     title: "Triumphant Awakening Contemplates",
@@ -78,8 +73,7 @@ export const cardData = [
     currentBid: "4.89 ETH",
     countdown: "Jul 21, 2022 18:00:00",
     numberOfLike: 220,
-    creatorProfileUrl: "#",
-    historyUrl: "#"
+    creatorProfileUrl: "#"
   },
   {
     title: "Living Vase 01 by Lanza Contemplates",
@@ -90,7 +84,6 @@ export const cardData = [
     currentBid: "4.89 ETH",
     countdown: "Jul 21, 2022 18:00:00",
     numberOfLike: 90,
-    creatorProfileUrl: "#",
-    historyUrl: "#"
+    creatorProfileUrl: "#"
   }
 ];

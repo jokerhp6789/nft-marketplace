@@ -2,7 +2,6 @@ import "./cardComponent.scss";
 
 import React, {useState} from "react";
 import {Badge, CountDown} from "./components";
-import ExampleImg from "../../assets/imgs/liveAuctions/exampleImg4.jpeg";
 import ButtonComponent from "../buttonComponent";
 import {MdShoppingBag} from "react-icons/md";
 import {BiRefresh} from "react-icons/bi";
@@ -19,6 +18,8 @@ const CardComponent = ({
                          itemPrice,
                          itemHistoryUrl,
                          refItem,
+                         isOwner = false,
+                         isComing = false,
                          isHidePlaceBid = true
                        }) => {
   const [isShowPlaceBid, setIsShowPlaceBid] = useState(false);
@@ -30,6 +31,13 @@ const CardComponent = ({
         <div className="card-badge__container">
           <Badge numberOfLike={likesOfItem}/>
         </div>
+        {
+          isComing && (
+            <div className="card-badge__container card-coming__badge">
+              <p>Coming soon</p>
+            </div>
+          )
+        }
         <a href="#">
           <img src={itemImg} alt=""/>
         </a>
@@ -40,9 +48,13 @@ const CardComponent = ({
             </div>
           )
         }
-        <div className="card-count__down-container">
-          <CountDown date={itemCountDown}/>
-        </div>
+        {
+          itemCountDown && (
+            <div className="card-count__down-container">
+              <CountDown date={itemCountDown}/>
+            </div>
+          )
+        }
       </div>
       <div className="card-content">
         <div className="card-content__title d-flex">
@@ -58,7 +70,7 @@ const CardComponent = ({
             <img src={itemUserAvt} alt=""/>
           </div>
           <div className="card-content__creator">
-            <h6 className="title">Creator</h6>
+            <h6 className="title">{isOwner ? "Owned By" : "Creator"}</h6>
             <a href={itemUserProfileUrl} className="creator-name">{itemUserName}</a>
           </div>
           <div className="card-content__price">
@@ -68,7 +80,7 @@ const CardComponent = ({
         </div>
       </div>
       {
-        !isHidePlaceBid && (
+        (!isHidePlaceBid && !isComing) && (
           <div className="card-place__bid">
             <div className="card-place__bid-btn">
               <ButtonComponent btnName="Place Bid" btnIcon={<MdShoppingBag/>}/>
