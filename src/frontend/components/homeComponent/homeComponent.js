@@ -8,6 +8,7 @@ import LiveAuctionsComponent from "../liveAuctionsComponent";
 import TopSellerComponent from "../topSellerComponent";
 import TodayPickComponent from "../todayPickComponent";
 import PopularCollectionComponent from "../popularCollectionComponent";
+import ProjectFeatureComponent from "../projectFeatureComponent";
 
 const HomeComponent = ({
                          marketplace,
@@ -64,6 +65,7 @@ const HomeComponent = ({
       <TopSellerComponent/>
       <TodayPickComponent/>
       <PopularCollectionComponent/>
+      <ProjectFeatureComponent/>
     </Container>
     // <div className="flex justify-center">
     //   {items.length > 0 ?
