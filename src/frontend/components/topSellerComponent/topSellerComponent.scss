@@ -1,11 +1,6 @@
 @import "../../styles/index";
 
 .top-seller {
-  .slider-container .slider-inner {
-    transform: unset;
-    -webkit-transform: unset;
-  }
-
   &__item-container {
     width: fit-content;
 
