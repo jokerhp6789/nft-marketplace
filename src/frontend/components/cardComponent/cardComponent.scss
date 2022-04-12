@@ -249,26 +249,6 @@
   }
 }
 
-.badge-button {
-  &__container {
-    background-color: $primary-color;
-    border-radius: 6px;
-    width: 60px;
-    padding: 3px;
-    @include font-size($fz-xs, $fz-sm);
-    @include flexBox(row, center, center);
-    color: $white-color;
-  }
-
-  &__icon {
-    margin-right: 6px;
-  }
-
-  &__icon svg, &__number-of__like span {
-    font-weight: 400;
-  }
-}
-
 @keyframes upDownAnimation {
   from {
     top: 60%;

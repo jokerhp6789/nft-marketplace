@@ -1,0 +1,32 @@
+@import "../../styles/index";
+
+.user-avt {
+  &__container {
+    width: fit-content;
+    position: relative;
+
+    img {
+      border-radius: 36px;
+    }
+  }
+
+  &__verify {
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    background-color: $light-grey-color;
+    @include flexBox(row, center, center);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    svg {
+      color: $white-color;
+      font-size: $fz-xs;
+    }
+
+    &.is-verify {
+      background-color: $blue;
+    }
+  }
+}

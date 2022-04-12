@@ -5,6 +5,7 @@ import {Badge, CountDown} from "./components";
 import ButtonComponent from "../buttonComponent";
 import {MdShoppingBag} from "react-icons/md";
 import {BiRefresh} from "react-icons/bi";
+import BadgeCompent from "../badgeComponent";
 
 const CardComponent = ({
                          likesOfItem,
@@ -29,7 +30,7 @@ const CardComponent = ({
          onMouseLeave={() => setIsShowPlaceBid(false)}>
       <div className="card-media">
         <div className="card-badge__container">
-          <Badge numberOfLike={likesOfItem}/>
+          <BadgeCompent numberOfLike={likesOfItem}/>
         </div>
         {
           isComing && (

@@ -4,34 +4,6 @@
   width: fit-content;
 
   .seller {
-    &-avt {
-      position: relative;
-
-      img {
-        border-radius: 36px;
-      }
-    }
-
-    &-verify {
-      width: 25px;
-      height: 25px;
-      border-radius: 100%;
-      background-color: $light-grey-color;
-      @include flexBox(row, center, center);
-      position: absolute;
-      bottom: 0;
-      right: 0;
-
-      svg {
-        color: $white-color;
-        font-size: $fz-xs;
-      }
-
-      &.is-verify {
-        background-color: $blue;
-      }
-    }
-
     &-info {
       @include flexBox(column, center, center);
       margin-top: 24px;

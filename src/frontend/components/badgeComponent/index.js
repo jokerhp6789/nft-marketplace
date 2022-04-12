@@ -1,7 +1,9 @@
-import {useEffect, useState} from "react";
+import "./badgeComponent.scss";
+
+import React, {useState} from "react";
 import {AiFillHeart, AiOutlineHeart} from "react-icons/ai";
 
-export const Badge = ({numberOfLike}) => {
+const BadgeComponent = ({numberOfLike}) => {
   const [likeTotal, setLikeTotal] = useState(numberOfLike);
   const [isLiked, setIsLiked] = useState(false);
   const onLikeBtnClick = () => {
@@ -29,3 +31,5 @@ export const Badge = ({numberOfLike}) => {
     </button>
   );
 };
+
+export default BadgeComponent;

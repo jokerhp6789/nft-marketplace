@@ -1,0 +1,125 @@
+@import "../../styles/index";
+
+.popular-collection {
+  min-height: 100vh;
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  @include mobile {
+    &__container {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  @include tablet {
+    &__container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+.popular-card {
+  background-color: $primary-color;
+  padding: 24px;
+  border-radius: 24px;
+
+  &__header {
+    display: flex;
+
+    &-info {
+      display: flex;
+      flex: 1;
+    }
+
+    &-avt {
+      margin-right: 6px;
+      max-width: 60px;
+
+      .user-avt__container img {
+        border-radius: 24px;
+      }
+    }
+
+    &-title {
+      .title {
+        @include font-size($fz-md, $fz-lg);
+        font-weight: 600;
+        color: $white-color;
+        text-decoration: none;
+        transition: $transition;
+
+        &:hover {
+          color: $blue
+        }
+      }
+
+      .creator {
+        &-info {
+          font-size: $fz-sm;
+        }
+
+        &-title, &-name {
+          color: $white-color;
+        }
+
+        &-title {
+          font-weight: 400;
+        }
+
+        &-name {
+          text-decoration: none;
+          font-weight: 600;
+
+          &:hover {
+            color: $blue;
+          }
+        }
+      }
+    }
+
+    &-badge {
+      .badge-button__container {
+        background-color: $bg-section;
+      }
+    }
+  }
+
+  &__body {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+
+    .img {
+      &-left, &-right {
+        flex: 1;
+        @include flexBox(row, center, center);
+      }
+
+      &-size {
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        object-fit: cover;
+      }
+
+      &-right {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        &__top, &__bottom {
+          flex: 1;
+        }
+
+        &__top {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 6px;
+        }
+      }
+    }
+  }
+}
