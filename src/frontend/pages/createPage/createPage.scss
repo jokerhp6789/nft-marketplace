@@ -71,11 +71,6 @@ input[type=number] {
         @include flexBox(row, flex-end, center);
         overflow: hidden;
       }
-
-      &:hover .upload-item__label {
-        background-color: $white-color;
-        color: $blue;
-      }
     }
 
     &__label {
@@ -87,6 +82,11 @@ input[type=number] {
       font-size: $fz-sm;
       font-weight: 600;
       transition: $transition;
+
+      &:hover {
+        background-color: $white-color;
+        color: $blue;
+      }
     }
 
     &__input {

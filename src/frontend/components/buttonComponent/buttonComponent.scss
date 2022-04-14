@@ -23,16 +23,6 @@
     background-color: $white-color;
   }
 
-  &:disabled {
-    border-color: $dark-grey-color;
-    color: $dark-grey-color;
-
-    &:hover {
-      color: $dark-grey-color;
-      background-color: unset;
-    }
-  }
-
   &.btn-space {
     padding: 15px 20px;
 
@@ -51,6 +41,25 @@
 
       svg {
         color: $blue;
+      }
+    }
+  }
+
+  &:disabled {
+    border-color: $dark-grey-color;
+    color: $dark-grey-color;
+
+    svg {
+      color: $dark-grey-color;
+    }
+
+    &:hover {
+      color: $dark-grey-color;
+      background-color: unset;
+      border-color: unset;
+
+      svg {
+        color: unset;
       }
     }
   }

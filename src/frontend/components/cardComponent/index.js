@@ -1,6 +1,6 @@
 import "./cardComponent.scss";
 
-import React, {useEffect, useRef, useState} from "react";
+import React, {useState} from "react";
 import {Badge, CountDown} from "./components";
 import ButtonComponent from "../buttonComponent";
 import {MdShoppingBag} from "react-icons/md";
@@ -18,6 +18,8 @@ const CardComponent = ({
                          itemUserProfileUrl,
                          itemPrice,
                          itemHistoryUrl,
+                         itemDesc,
+                         isBuy = false,
                          isOwner = false,
                          isComing = false,
                          isHidePlaceBid = true
@@ -48,7 +50,7 @@ const CardComponent = ({
         {
           (isHidePlaceBid && isShowPlaceBid) && (
             <div className="card-media__place-bid">
-              <ButtonComponent btnName="Buy now" btnIcon={<MdShoppingBag/>}/>
+              <ButtonComponent btnName={isBuy ? "Bought" : "Buy now"} btnIcon={<MdShoppingBag/>} isDisable={isBuy}/>
             </div>
           )
         }
@@ -64,6 +66,9 @@ const CardComponent = ({
         <div className="card-content__title d-flex">
           <div className="title">
             <a href={itemUrl}>{itemTitle}</a>
+            {
+              itemDesc && <span className="description">{itemDesc}</span>
+            }
           </div>
           {/*<div className="tags">*/}
           {/*  <p>BSC</p>*/}
@@ -84,7 +89,7 @@ const CardComponent = ({
           {
             (!itemHistoryUrl && !isHidePlaceBid && !isComing) && (
               <div className="card-place__bid-btn">
-                <ButtonComponent btnName="Buy now" btnIcon={<MdShoppingBag/>}/>
+                <ButtonComponent btnName={isBuy ? "Bought" : "Buy now"} btnIcon={<MdShoppingBag/>} isDisable={isBuy}/>
               </div>
             )
           }

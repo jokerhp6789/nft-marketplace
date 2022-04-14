@@ -62,6 +62,7 @@
     @include font-size($fz-xxl, $fz-heading-h1);
     font-weight: 600;
     color: $white-color;
+    text-transform: capitalize;
   }
 
   @include mobile {

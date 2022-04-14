@@ -22,7 +22,8 @@ const exampleCard = {
   currentBid: 4.89,
   countdown: "Jul 21, 2022 18:00:00",
   numberOfLike: null,
-  creatorProfileUrl: "#"
+  creatorProfileUrl: "#",
+  desc: "This is test desc"
 };
 
 const CreatePage = ({
@@ -115,7 +116,7 @@ const CreatePage = ({
                                itemUserAvt={exampleCard.creatorAvt}
                                itemUserProfileUrl={exampleCard.creatorProfileUrl}
                                likesOfItem={exampleCard.numberOfLike}
-                               itemUserName={exampleCard.creatorName}/>
+                               itemUserName={exampleCard.creatorName} itemDesc={exampleCard.desc}/>
               </div>
             </Col>
             <Col lg={8} md={12} sm={12} className="create-page__right">
@@ -158,7 +159,7 @@ const CreatePage = ({
           </Row>
         </Container>
       </Container>
-      <ToastNoti errorMsg={notiMsg.content} titleNoti={notiMsg.title} setErrMsg={setNotiMsg}/>
+      <ToastNoti errorMsg={notiMsg.content} titleNoti={notiMsg.title} setErrMsg={setNotiMsg} position="top-end"/>
     </>
   );
 };

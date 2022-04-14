@@ -106,7 +106,7 @@
         width: 100%;
         text-align: left;
 
-        a {
+        a, .description {
           width: 100%;
           display: inline-block;
           overflow: hidden;
@@ -119,6 +119,15 @@
 
           &:hover {
             color: $blue;
+          }
+        }
+
+        .description {
+          color: $light-grey-color;
+          @include font-size($fz-sm, $fz-md);
+
+          &:hover {
+            color: unset;
           }
         }
       }

@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 import HomePage from "./pages/homePage/homePage";
 import MyListedItems from "./pages/listItemPage/MyListedItems.js";
-import MyPurchases from "./pages/myPurchasesPage/MyPurchases.js";
 import MarketplaceAbi from "./contractsData/Marketplace.json";
 import MarketplaceAddress from "./contractsData/Marketplace-address.json";
 import NFTAbi from "./contractsData/NFT.json";
@@ -16,9 +15,9 @@ import {useState} from "react";
 import {ethers} from "ethers";
 import {Spinner} from "react-bootstrap";
 import HeaderNavigation from "./components/headerNavigation";
-import CardComponent from "./components/cardComponent";
 import FooterComponent from "./components/footerComponent";
 import CreatePage from "./pages/createPage";
+import MyPurchasesPage from "./pages/myPurchasesPage";
 
 function App() {
   // const [loading, setLoading] = useState(false);
@@ -80,9 +79,9 @@ function App() {
             {/*<Route path="/my-listed-items" element={*/}
             {/*  <MyListedItems marketplace={marketplace} nft={nft} account={account}/>*/}
             {/*}/>*/}
-            {/*<Route path="/my-purchases" element={*/}
-            {/*  <MyPurchases marketplace={marketplace} nft={nft} account={account}/>*/}
-            {/*}/>*/}
+            <Route path="/my-purchases" element={
+              <MyPurchasesPage marketplace={marketplace} nft={nft} account={account}/>
+            }/>
           </Routes>
           {/*)}*/}
         </div>
