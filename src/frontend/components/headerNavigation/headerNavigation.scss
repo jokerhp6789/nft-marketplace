@@ -30,6 +30,10 @@
       &:hover {
         color: $blue !important;
       }
+
+      &.is-active {
+        color: $blue !important;
+      }
     }
   }
 

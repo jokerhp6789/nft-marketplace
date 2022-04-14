@@ -10,6 +10,7 @@ import ExampleImg1 from "../../assets/imgs/liveAuctions/exampleImg1.jpg";
 import CreatorImg1 from "../../assets/imgs/liveAuctions/creatorImg1.jpg";
 import ToastNoti from "../../components/toastNotiComponent";
 import ButtonComponent from "../../components/buttonComponent";
+import {useNavigate} from "react-router";
 
 const client = ipfsHttpClient("https://ipfs.infura.io:5001/api/v0");
 
@@ -31,6 +32,7 @@ const CreatePage = ({
                       nft,
                       isNeedConnect
                     }) => {
+  const navigate = useNavigate();
   const [image, setImage] = useState("");
   const [price, setPrice] = useState(null);
   const [name, setName] = useState("");
@@ -96,6 +98,8 @@ const CreatePage = ({
     // add nft to marketplace
     const listingPrice = ethers.utils.parseEther(price.toString());
     await (await marketplace.makeItem(nft.address, id, listingPrice)).wait();
+    
+    navigate("/explore");
   };
   
   return isNeedConnect ? (
@@ -125,7 +129,7 @@ const CreatePage = ({
                                itemUserAvt={exampleCard.creatorAvt}
                                itemUserProfileUrl={exampleCard.creatorProfileUrl}
                                likesOfItem={exampleCard.numberOfLike}
-                               itemUserName={exampleCard.creatorName} itemDesc={exampleCard.desc}/>
+                               itemUserName={exampleCard.creatorName} itemDesc={description || exampleCard.desc}/>
               </div>
             </Col>
             <Col lg={8} md={12} sm={12} className="create-page__right">
@@ -168,7 +172,7 @@ const CreatePage = ({
           </Row>
         </Container>
       </Container>
-      <ToastNoti errorMsg={notiMsg.content} titleNoti={notiMsg.title} setErrMsg={setNotiMsg} position="top-end"/>
+      <ToastNoti errorMsg={notiMsg.content} titleNoti={notiMsg.title} setErrMsg={setNotiMsg}/>
     </>
   );
 };

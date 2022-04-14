@@ -51,7 +51,7 @@
 
 .title-page {
   &__container {
-    @include flexBox(row, center, center);
+    @include flexBox(column, center, center);
     padding: 60px 12px;
     background: url("../../assets/imgs/pageTitleBg.jpeg") no-repeat center;
     background-size: cover;
@@ -64,6 +64,21 @@
     font-weight: 600;
     color: $white-color;
     text-transform: capitalize;
+  }
+
+  &__breadcrumb {
+    margin-top: 6px;
+    color: $light-grey-color;
+
+    &-item {
+      color: $light-grey-color;
+      text-decoration: none;
+      transition: $transition;
+
+      &:hover {
+        color: $blue;
+      }
+    }
   }
 
   @include mobile {

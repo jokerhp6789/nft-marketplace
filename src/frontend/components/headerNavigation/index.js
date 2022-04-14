@@ -7,11 +7,13 @@ import {Link} from "react-router-dom";
 import {IoMdWallet} from "react-icons/io";
 import {headerMenu} from "../../configs";
 import ButtonComponent from "../buttonComponent";
+import {useLocation} from "react-router";
 
 const HeaderNavigation = ({
                             web3Handler,
                             account
                           }) => {
+  const {pathname} = useLocation();
   const [offset, setOffset] = useState(0);
   useEffect(() => {
     window.onscroll = () => {
@@ -57,7 +59,7 @@ const HeaderNavigation = ({
                 <Nav.Link key={index}
                           as={Link}
                           to={val.path}
-                          className="text-white header-left__side-item">{val.label}</Nav.Link>
+                          className={`text-white header-left__side-item ${pathname === val.path && "is-active"}`}>{val.label}</Nav.Link>
               ))
             }
           </Nav>
