@@ -28,9 +28,13 @@ const CardComponent = ({
          onMouseEnter={() => setIsShowPlaceBid(true)}
          onMouseLeave={() => setIsShowPlaceBid(false)}>
       <div className="card-media">
-        <div className="card-badge__container">
-          <BadgeCompent numberOfLike={likesOfItem}/>
-        </div>
+        {
+          likesOfItem && (
+            <div className="card-badge__container">
+              <BadgeCompent numberOfLike={likesOfItem}/>
+            </div>
+          )
+        }
         {
           isComing && (
             <div className="card-badge__container card-coming__badge">
@@ -44,7 +48,7 @@ const CardComponent = ({
         {
           (isHidePlaceBid && isShowPlaceBid) && (
             <div className="card-media__place-bid">
-              <ButtonComponent btnName="Place Bid" btnIcon={<MdShoppingBag/>}/>
+              <ButtonComponent btnName="Buy now" btnIcon={<MdShoppingBag/>}/>
             </div>
           )
         }
@@ -61,36 +65,47 @@ const CardComponent = ({
           <div className="title">
             <a href={itemUrl}>{itemTitle}</a>
           </div>
-          <div className="tags">
-            <p>BSC</p>
-          </div>
+          {/*<div className="tags">*/}
+          {/*  <p>BSC</p>*/}
+          {/*</div>*/}
         </div>
         <div className="card-content__info">
-          <div className="card-content__avt">
-            <img src={itemUserAvt} alt=""/>
-          </div>
-          <div className="card-content__creator">
-            <h6 className="title">{isOwner ? "Owned By" : "Creator"}</h6>
-            <a href={itemUserProfileUrl} className="creator-name">{itemUserName}</a>
-          </div>
+          {/*<div className="card-content__avt">*/}
+          {/*  <img src={itemUserAvt} alt=""/>*/}
+          {/*</div>*/}
+          {/*<div className="card-content__creator">*/}
+          {/*  <h6 className="title">{isOwner ? "Owned By" : "Creator"}</h6>*/}
+          {/*  <a href={itemUserProfileUrl} className="creator-name">{itemUserName}</a>*/}
+          {/*</div>*/}
           <div className="card-content__price">
-            <h6 className="title">Current Bid</h6>
+            <h6 className="title">Current Price</h6>
             <p className="price">{itemPrice} ETH</p>
           </div>
+          {
+            (!itemHistoryUrl && !isHidePlaceBid && !isComing) && (
+              <div className="card-place__bid-btn">
+                <ButtonComponent btnName="Buy now" btnIcon={<MdShoppingBag/>}/>
+              </div>
+            )
+          }
         </div>
       </div>
       {
-        (!isHidePlaceBid && !isComing) && (
+        (!isHidePlaceBid && !isComing && itemHistoryUrl) && (
           <div className="card-place__bid">
             <div className="card-place__bid-btn">
-              <ButtonComponent btnName="Place Bid" btnIcon={<MdShoppingBag/>}/>
+              <ButtonComponent btnName="Buy now" btnIcon={<MdShoppingBag/>}/>
             </div>
-            <div className="card-place__bid-history">
-              <a href={itemHistoryUrl}>
-                <BiRefresh/>
-                <span>View History</span>
-              </a>
-            </div>
+            {
+              itemHistoryUrl && (
+                <div className="card-place__bid-history">
+                  <a href={itemHistoryUrl}>
+                    <BiRefresh/>
+                    <span>View History</span>
+                  </a>
+                </div>
+              )
+            }
           </div>
         )
       }

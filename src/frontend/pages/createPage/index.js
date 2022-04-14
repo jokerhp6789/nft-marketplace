@@ -2,9 +2,9 @@ import "./createPage.scss";
 
 import {useState} from "react";
 import {ethers} from "ethers";
-import {Row, Form, Button, Container, Col} from "react-bootstrap";
+import {Row, Container, Col} from "react-bootstrap";
 import {create as ipfsHttpClient} from "ipfs-http-client";
-import {TitleComponent, TitlePage} from "../../components/titleComponent";
+import {TitlePage} from "../../components/titleComponent";
 import CardComponent from "../../components/cardComponent";
 import ExampleImg1 from "../../assets/imgs/liveAuctions/exampleImg1.jpg";
 import CreatorImg1 from "../../assets/imgs/liveAuctions/creatorImg1.jpg";
@@ -19,9 +19,9 @@ const exampleCard = {
   itemUrl: "#",
   creatorName: "SalvadorDali",
   creatorAvt: CreatorImg1,
-  currentBid: "4.89 ETH",
+  currentBid: 4.89,
   countdown: "Jul 21, 2022 18:00:00",
-  numberOfLike: 100,
+  numberOfLike: null,
   creatorProfileUrl: "#"
 };
 
@@ -115,7 +115,7 @@ const CreatePage = ({
                                itemUserAvt={exampleCard.creatorAvt}
                                itemUserProfileUrl={exampleCard.creatorProfileUrl}
                                likesOfItem={exampleCard.numberOfLike}
-                               itemUserName={exampleCard.creatorName} itemHistoryUrl={"#"}/>
+                               itemUserName={exampleCard.creatorName}/>
               </div>
             </Col>
             <Col lg={8} md={12} sm={12} className="create-page__right">

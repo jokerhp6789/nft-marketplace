@@ -103,7 +103,7 @@
       width: 100%;
 
       .title {
-        width: 70%;
+        width: 100%;
         text-align: left;
 
         a {
@@ -146,7 +146,8 @@
     &__info {
       margin-top: 12px;
       display: grid;
-      grid-template-columns: 45px 1fr auto;
+      //grid-template-columns: 45px 1fr auto;
+      grid-template-columns: 1fr auto;
     }
 
     &__avt img {
@@ -176,7 +177,7 @@
     }
 
     &__price {
-      @include flexBox(column, center, flex-end);
+      @include flexBox(column, center, flex-start);
 
       .title {
         @include font-size($fz-xxs, $fz-xs);

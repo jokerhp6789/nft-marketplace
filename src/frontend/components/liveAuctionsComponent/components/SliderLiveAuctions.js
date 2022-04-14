@@ -57,7 +57,7 @@ export const SliderLiveAuctions = ({
                                itemUserName={val.creatorName}
                                itemTitle={val.title}
                                likesOfItem={val.numberOfLike}
-                               itemCountDown={val.countdown}/>
+                               itemCountDown={val.countdown} isHidePlaceBid={false}/>
               </div>
               //     )
               //   }
