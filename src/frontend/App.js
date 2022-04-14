@@ -6,7 +6,6 @@ import {
   Route
 } from "react-router-dom";
 import HomePage from "./pages/homePage/homePage";
-import MyListedItems from "./pages/listItemPage/MyListedItems.js";
 import MarketplaceAbi from "./contractsData/Marketplace.json";
 import MarketplaceAddress from "./contractsData/Marketplace-address.json";
 import NFTAbi from "./contractsData/NFT.json";
@@ -18,6 +17,7 @@ import HeaderNavigation from "./components/headerNavigation";
 import FooterComponent from "./components/footerComponent";
 import CreatePage from "./pages/createPage";
 import MyPurchasesPage from "./pages/myPurchasesPage";
+import MyListedPage from "./pages/listItemPage";
 
 function App() {
   // const [loading, setLoading] = useState(false);
@@ -76,9 +76,9 @@ function App() {
             <Route path="/create" element={
               <CreatePage marketplace={marketplace} nft={nft}/>
             }/>
-            {/*<Route path="/my-listed-items" element={*/}
-            {/*  <MyListedItems marketplace={marketplace} nft={nft} account={account}/>*/}
-            {/*}/>*/}
+            <Route path="/my-listed-items" element={
+              <MyListedPage marketplace={marketplace} nft={nft} account={account}/>
+            }/>
             <Route path="/my-purchases" element={
               <MyPurchasesPage marketplace={marketplace} nft={nft} account={account}/>
             }/>

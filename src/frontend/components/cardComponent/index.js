@@ -19,6 +19,7 @@ const CardComponent = ({
                          itemPrice,
                          itemHistoryUrl,
                          itemDesc,
+                         buyItemFunc,
                          isBuy = false,
                          isOwner = false,
                          isComing = false,
@@ -48,7 +49,7 @@ const CardComponent = ({
           <img src={itemImg} alt=""/>
         </a>
         {
-          (isHidePlaceBid && isShowPlaceBid) && (
+          ((isHidePlaceBid && isShowPlaceBid) || buyItemFunc) && (
             <div className="card-media__place-bid">
               <ButtonComponent btnName={isBuy ? "Bought" : "Buy now"} btnIcon={<MdShoppingBag/>} isDisable={isBuy}/>
             </div>
@@ -89,7 +90,9 @@ const CardComponent = ({
           {
             (!itemHistoryUrl && !isHidePlaceBid && !isComing) && (
               <div className="card-place__bid-btn">
-                <ButtonComponent btnName={isBuy ? "Bought" : "Buy now"} btnIcon={<MdShoppingBag/>} isDisable={isBuy}/>
+                <ButtonComponent btnName={isBuy ? "Bought" : "Buy now"}
+                                 btnIcon={<MdShoppingBag/>}
+                                 isDisable={isBuy || !buyItemFunc}/>
               </div>
             )
           }

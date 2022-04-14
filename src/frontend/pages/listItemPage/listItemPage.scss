@@ -1,32 +1,42 @@
 @import "../../styles/index";
 
-.my-purchases {
-  padding-left: 0;
+.my-listed {
   padding-right: 0;
+  padding-left: 0;
   padding-bottom: 24px;
 
-  &__container {
+  &__items {
     display: grid;
     gap: 12px;
   }
 
+  &__container {
+    &:not(:last-child) {
+      margin-bottom: 36px;
+    }
+  }
+
   @include mobile {
-    &__container {
+    &__items {
       grid-template-columns: repeat(1, 1fr);
     }
   }
   @include tablet {
-    &__container {
+    &__items {
       grid-template-columns: repeat(2, 1fr);
     }
   }
   @include desktop {
-    &__container {
+    &__items {
       grid-template-columns: repeat(3, 1fr);
+
+      //.item:last-child {
+      //  display: none;
+      //}
     }
   }
   @include wide-desktop {
-    &__container {
+    &__items {
       grid-template-columns: repeat(4, 1fr);
     }
   }

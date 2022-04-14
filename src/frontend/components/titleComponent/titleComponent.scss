@@ -20,7 +20,7 @@
 
 
   &__right-side a {
-    color: $white-color;
+    color: $white-color !important;
     font-size: $fz-sm;
     text-decoration: none;
     background: linear-gradient(to right, #E250E5, #4B50E6, #E250E5);
@@ -31,6 +31,7 @@
     animation: changeColorOnHover 2s ease-in-out infinite;
     transition: color .2s ease-in-out;
     position: relative;
+    cursor: pointer;
 
     &:after {
       content: '';
@@ -43,7 +44,7 @@
     }
 
     &:hover {
-      color: rgba(0, 0, 0, 0);
+      color: rgba(0, 0, 0, 0) !important;
     }
   }
 }
