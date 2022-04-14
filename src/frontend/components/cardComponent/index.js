@@ -1,6 +1,6 @@
 import "./cardComponent.scss";
 
-import React, {useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {Badge, CountDown} from "./components";
 import ButtonComponent from "../buttonComponent";
 import {MdShoppingBag} from "react-icons/md";
@@ -18,17 +18,25 @@ const CardComponent = ({
                          itemUserProfileUrl,
                          itemPrice,
                          itemHistoryUrl,
-                         refItem,
                          isOwner = false,
                          isComing = false,
                          isHidePlaceBid = true
                        }) => {
+  const cardRef = useRef(null);
+  const [cardWidth, setCardWidth] = useState(0);
   const [isShowPlaceBid, setIsShowPlaceBid] = useState(false);
+  useEffect(() => {
+    setCardWidth(cardRef?.current?.offsetWidth);
+  }, [cardRef]);
   return (
-    <div ref={refItem} className="card-container"
+    <div ref={cardRef} className="card-container"
          onMouseEnter={() => setIsShowPlaceBid(true)}
          onMouseLeave={() => setIsShowPlaceBid(false)}>
-      <div className="card-media">
+      <div className="card-media"
+           style={{
+             width: `${cardWidth - 40}px`,
+             height: `${cardWidth - 40}px`
+           }}>
         <div className="card-badge__container">
           <BadgeCompent numberOfLike={likesOfItem}/>
         </div>

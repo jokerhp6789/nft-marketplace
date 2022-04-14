@@ -2,9 +2,9 @@ import "./projectFeature.scss";
 
 import React from "react";
 import {Container} from "react-bootstrap";
-import TitleComponent from "../titleComponent";
 import {projectFeatureData} from "../../configs";
 import {FeatureItem} from "./components";
+import {TitleComponent} from "../titleComponent";
 
 const ProjectFeatureComponent = () => {
   return (

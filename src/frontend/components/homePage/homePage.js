@@ -1,4 +1,4 @@
-import "./homeComponent.scss";
+import "./homePage.scss";
 
 import {useState, useEffect} from "react";
 import {ethers} from "ethers";
@@ -10,7 +10,7 @@ import TodayPickComponent from "../todayPickComponent";
 import PopularCollectionComponent from "../popularCollectionComponent";
 import ProjectFeatureComponent from "../projectFeatureComponent";
 
-const HomeComponent = ({
+const HomePage = ({
                          marketplace,
                          nft
                        }) => {
@@ -101,4 +101,4 @@ const HomeComponent = ({
     // </div>
   );
 };
-export default HomeComponent;
+export default HomePage;

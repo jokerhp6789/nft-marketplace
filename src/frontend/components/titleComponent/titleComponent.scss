@@ -1,15 +1,15 @@
 @import "../../styles/index";
 
-.title {
-  &-container {
+.title-component {
+  &__container {
     @include flexBox(row, space-between, center);
     margin-bottom: 24px;
     padding-left: 0;
     padding-right: 0;
   }
 
-  &-left__side {
-    .title-text {
+  &__left-side {
+    .title-component__text {
       color: $white-color;
       text-align: left;
       @include font-size($fz-xxl, $fz-heading-h2);
@@ -19,7 +19,7 @@
   }
 
 
-  &-right__side a {
+  &__right-side a {
     color: $white-color;
     font-size: $fz-sm;
     text-decoration: none;
@@ -44,6 +44,30 @@
 
     &:hover {
       color: rgba(0, 0, 0, 0);
+    }
+  }
+}
+
+.title-page {
+  &__container {
+    @include flexBox(row, center, center);
+    padding: 60px 12px;
+    background: url("../../assets/imgs/pageTitleBg.jpeg") no-repeat center;
+    background-size: cover;
+    border-bottom: .5px solid $light-grey-color;
+    margin-bottom: 24px;
+  }
+
+  &__text {
+    @include font-size($fz-xxl, $fz-heading-h1);
+    font-weight: 600;
+    color: $white-color;
+  }
+
+  @include mobile {
+    &__container {
+      padding-top: 36px;
+      padding-bottom: 36px;
     }
   }
 }

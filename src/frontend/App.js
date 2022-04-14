@@ -5,8 +5,7 @@ import {
   Routes,
   Route
 } from "react-router-dom";
-import HomeComponent from "./components/homeComponent/homeComponent";
-import Create from "./components/createComponent/Create.js";
+import HomePage from "./components/homePage/homePage";
 import MyListedItems from "./components/listItemComponent/MyListedItems.js";
 import MyPurchases from "./components/myPurchasesComponent/MyPurchases.js";
 import MarketplaceAbi from "./contractsData/Marketplace.json";
@@ -19,6 +18,7 @@ import {Spinner} from "react-bootstrap";
 import HeaderNavigation from "./components/headerNavigation";
 import CardComponent from "./components/cardComponent";
 import FooterComponent from "./components/footerComponent";
+import CreatePage from "./components/createPage";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -55,7 +55,7 @@ function App() {
   
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className="App overflow-hidden">
         <>
           <HeaderNavigation web3Handler={web3Handler} account={account}/>
         </>
@@ -73,11 +73,11 @@ function App() {
           ) : (
             <Routes>
               <Route path="/" element={
-                <HomeComponent marketplace={marketplace} nft={nft}/>
+                <HomePage marketplace={marketplace} nft={nft}/>
               }/>
-              {/*<Route path="/create" element={*/}
-              {/*  <Create marketplace={marketplace} nft={nft}/>*/}
-              {/*}/>*/}
+              <Route path="/create" element={
+                <CreatePage marketplace={marketplace} nft={nft}/>
+              }/>
               {/*<Route path="/my-listed-items" element={*/}
               {/*  <MyListedItems marketplace={marketplace} nft={nft} account={account}/>*/}
               {/*}/>*/}

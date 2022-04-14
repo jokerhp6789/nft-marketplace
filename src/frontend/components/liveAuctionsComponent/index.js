@@ -1,8 +1,8 @@
 import React from "react";
 import {Container} from "react-bootstrap";
-import TitleComponent from "../titleComponent";
 import {cardData} from "../../configs";
 import {SliderLiveAuctions} from "./components";
+import {TitleComponent} from "../titleComponent";
 
 const LiveAuctionsComponent = () => {
   return (

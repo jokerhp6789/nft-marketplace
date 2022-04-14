@@ -2,12 +2,12 @@ import "./todayPickComponent.scss";
 
 import React from "react";
 import { Container } from "react-bootstrap";
-import TitleComponent from "../titleComponent";
 import ButtonComponent from "../buttonComponent";
 import { BiCategoryAlt, BiDollarCircle } from "react-icons/bi";
 import { BsBox, BsLightningCharge } from "react-icons/bs";
 import { todayPickData } from "../../configs";
 import CardComponent from "../cardComponent";
+import {TitleComponent} from "../titleComponent";
 
 const TodayPickComponent = () => {
   return (
