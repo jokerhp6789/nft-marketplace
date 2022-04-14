@@ -44,4 +44,23 @@
       }
     }
   }
+
+  &:disabled {
+    border-color: $dark-grey-color;
+    color: $dark-grey-color;
+
+    svg {
+      color: $dark-grey-color;
+    }
+
+    &:hover {
+      color: $dark-grey-color;
+      background-color: unset;
+      border-color: unset;
+
+      svg {
+        color: unset;
+      }
+    }
+  }
 }

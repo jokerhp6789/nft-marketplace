@@ -34,7 +34,7 @@ export const SliderTopSeller = ({data}) => {
                   <UserAvtComponent isVerify={val.isVerify} userAvt={val.sellerAvt}/>
                   <div className="seller-info">
                     <a href={val.sellerProfileUrl} className="seller-name">{val.sellerName}</a>
-                    <p className="seller-total__price">{val.sellerPriceTotal}</p>
+                    <p className="seller-total__price">{val.sellerPriceTotal} ETH</p>
                   </div>
                 </div>
               </div>

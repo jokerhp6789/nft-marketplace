@@ -1,0 +1,13 @@
+@import "../../styles/index";
+
+.empty-result__container {
+  @include flexBox(row, center, center);
+  padding: 24px;
+
+  .text {
+    color: $white-color;
+    font-weight: 600;
+    @include font-size($fz-xxl, $fz-heading-h2);
+    text-align: center;
+  }
+}

@@ -3,6 +3,7 @@ import {Toast, ToastContainer} from "react-bootstrap";
 
 const ToastNoti = ({
                      errorMsg,
+                     setErrMsg,
                      position,
                      titleNoti
                    }) => {
@@ -12,12 +13,16 @@ const ToastNoti = ({
       setShowToast(true);
       setTimeout(() => {
         setShowToast(false);
+        setErrMsg({
+          title: "",
+          content: ""
+        });
       }, 2000);
     }
   }, [errorMsg]);
   return (
     <ToastContainer className="p-3 toast-container"
-                    position={position ? position : "bottom-end"}>
+                    position={position ? position : "bottom-end"} style={{zIndex: 1000}}>
       <Toast show={showToast}>
         <Toast.Header closeButton={false}>
           <strong className="me-auto">{titleNoti ? titleNoti : "Error"}</strong>

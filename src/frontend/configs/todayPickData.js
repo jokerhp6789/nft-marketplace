@@ -19,10 +19,10 @@ export const todayPickData = [
     itemUrl: "#",
     ownerName: "SalvadorDali",
     ownerAvt: OwnerImg1,
-    currentBid: "4.89 ETH",
-    numberOfLike: 100,
+    currentBid: 4.89,
+    numberOfLike: null,
     ownerProfileUrl: "#",
-    historyUrl: "#",
+    historyUrl: "",
     isComing: false
   },
   {
@@ -31,10 +31,10 @@ export const todayPickData = [
     itemUrl: "#",
     ownerName: "SalvadorDali",
     ownerAvt: OwnerImg2,
-    currentBid: "4.89 ETH",
-    numberOfLike: 100,
+    currentBid: 4.89,
+    numberOfLike: null,
     ownerProfileUrl: "#",
-    historyUrl: "#",
+    historyUrl: "",
     isComing: true
   },
   {
@@ -43,10 +43,10 @@ export const todayPickData = [
     itemUrl: "#",
     ownerName: "SalvadorDali",
     ownerAvt: OwnerImg3,
-    currentBid: "4.89 ETH",
-    numberOfLike: 100,
+    currentBid: 4.89,
+    numberOfLike: null,
     ownerProfileUrl: "#",
-    historyUrl: "#",
+    historyUrl: "",
     isComing: false
   },
   {
@@ -55,10 +55,10 @@ export const todayPickData = [
     itemUrl: "#",
     ownerName: "SalvadorDali",
     ownerAvt: OwnerImg4,
-    currentBid: "4.89 ETH",
-    numberOfLike: 100,
+    currentBid: 4.89,
+    numberOfLike: null,
     ownerProfileUrl: "#",
-    historyUrl: "#",
+    historyUrl: "",
     isComing: false
   },
   {
@@ -67,10 +67,10 @@ export const todayPickData = [
     itemUrl: "#",
     ownerName: "Ralph Garraway",
     ownerAvt: OwnerImg5,
-    currentBid: "4.89 ETH",
-    numberOfLike: 100,
+    currentBid: 4.89,
+    numberOfLike: null,
     ownerProfileUrl: "#",
-    historyUrl: "#",
+    historyUrl: "",
     isComing: false
   },
   {
@@ -79,10 +79,10 @@ export const todayPickData = [
     itemUrl: "#",
     ownerName: "Mason Woodward",
     ownerAvt: OwnerImg1,
-    currentBid: "4.89 ETH",
-    numberOfLike: 100,
+    currentBid: 4.89,
+    numberOfLike: null,
     ownerProfileUrl: "#",
-    historyUrl: "#",
+    historyUrl: "",
     isComing: false
   },
   {
@@ -91,10 +91,10 @@ export const todayPickData = [
     itemUrl: "#",
     ownerName: "Tyler Covington",
     ownerAvt: OwnerImg5,
-    currentBid: "4.89 ETH",
-    numberOfLike: 100,
+    currentBid: 4.89,
+    numberOfLike: null,
     ownerProfileUrl: "#",
-    historyUrl: "#",
+    historyUrl: "",
     isComing: false
   },
   {
@@ -103,10 +103,10 @@ export const todayPickData = [
     itemUrl: "#",
     ownerName: "Ralph Garraway",
     ownerAvt: OwnerImg5,
-    currentBid: "4.89 ETH",
-    numberOfLike: 100,
+    currentBid: 4.89,
+    numberOfLike: null,
     ownerProfileUrl: "#",
-    historyUrl: "#",
+    historyUrl: "",
     isComing: false
   }
 ];

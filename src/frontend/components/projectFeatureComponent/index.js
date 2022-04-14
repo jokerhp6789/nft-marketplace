@@ -2,9 +2,9 @@ import "./projectFeature.scss";
 
 import React from "react";
 import {Container} from "react-bootstrap";
-import TitleComponent from "../titleComponent";
 import {projectFeatureData} from "../../configs";
 import {FeatureItem} from "./components";
+import {TitleComponent} from "../titleComponent";
 
 const ProjectFeatureComponent = () => {
   return (
@@ -14,7 +14,7 @@ const ProjectFeatureComponent = () => {
         <div className="project-feature__container">
           {
             projectFeatureData.map((val, index) => (
-              <div className="project-feature__item">
+              <div key={index} className="project-feature__item">
                 <FeatureItem title={val.title}
                              desc={val.desc}
                              featureUrl={val.featureUrl}

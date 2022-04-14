@@ -5,20 +5,19 @@ import {
   Routes,
   Route
 } from "react-router-dom";
-import HomeComponent from "./components/homeComponent/homeComponent";
-import Create from "./components/createComponent/Create.js";
-import MyListedItems from "./components/listItemComponent/MyListedItems.js";
-import MyPurchases from "./components/myPurchasesComponent/MyPurchases.js";
+import HomePage from "./pages/homePage/homePage";
 import MarketplaceAbi from "./contractsData/Marketplace.json";
 import MarketplaceAddress from "./contractsData/Marketplace-address.json";
 import NFTAbi from "./contractsData/NFT.json";
 import NFTAddress from "./contractsData/NFT-address.json";
 import {useState} from "react";
 import {ethers} from "ethers";
-import {Spinner} from "react-bootstrap";
 import HeaderNavigation from "./components/headerNavigation";
-import CardComponent from "./components/cardComponent";
 import FooterComponent from "./components/footerComponent";
+import CreatePage from "./pages/createPage";
+import MyPurchasesPage from "./pages/myPurchasesPage";
+import MyListedPage from "./pages/listItemPage";
+import ExplorePage from "./pages/explorePage";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -52,47 +51,36 @@ function App() {
     setNFT(nft);
     setLoading(false);
   };
-  
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className="App overflow-hidden">
         <>
           <HeaderNavigation web3Handler={web3Handler} account={account}/>
         </>
         <div>
-          {!loading ? (
-            <div style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              minHeight: "80vh"
-            }}>
-              <Spinner animation="border" style={{display: "flex"}}/>
-              <p className="mx-3 my-0">Awaiting Metamask Connection...</p>
-            </div>
-          ) : (
-            <Routes>
-              <Route path="/" element={
-                <HomeComponent marketplace={marketplace} nft={nft}/>
-              }/>
-              {/*<Route path="/create" element={*/}
-              {/*  <Create marketplace={marketplace} nft={nft}/>*/}
-              {/*}/>*/}
-              {/*<Route path="/my-listed-items" element={*/}
-              {/*  <MyListedItems marketplace={marketplace} nft={nft} account={account}/>*/}
-              {/*}/>*/}
-              {/*<Route path="/my-purchases" element={*/}
-              {/*  <MyPurchases marketplace={marketplace} nft={nft} account={account}/>*/}
-              {/*}/>*/}
-            </Routes>
-          )}
+          <Routes>
+            <Route path="/" element={
+              <HomePage/>
+            }/>
+            <Route path="/explore" element={
+              <ExplorePage marketplace={marketplace} nft={nft} isNeedConnect={loading}/>
+            }/>
+            <Route path="/create" element={
+              <CreatePage marketplace={marketplace} nft={nft} isNeedConnect={loading}/>
+            }/>
+            <Route path="/my-listed-items" element={
+              <MyListedPage marketplace={marketplace} nft={nft} account={account} isNeedConnect={loading}/>
+            }/>
+            <Route path="/my-purchases" element={
+              <MyPurchasesPage marketplace={marketplace} nft={nft} account={account} isNeedConnect={loading}/>
+            }/>
+          </Routes>
         </div>
         <>
           <FooterComponent/>
         </>
       </div>
     </BrowserRouter>
-  
   );
 }
 

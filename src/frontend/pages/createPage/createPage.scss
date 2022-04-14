@@ -1,0 +1,133 @@
+@import "../../styles/index";
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.create-page {
+  min-height: 100vh;
+  padding-left: 0;
+  padding-right: 0;
+
+  &__container {
+    padding-bottom: 24px;
+  }
+
+  &__section-title {
+    color: $white-color;
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-align: left;
+    @include font-size($fz-md, $fz-lg);
+  }
+
+  &__input-field {
+    border: 1px solid rgba(138, 138, 160, 0.3);
+    border-radius: 8px;
+    color: $light-grey-color;
+    font-size: $fz-sm;
+    width: 100%;
+    padding: 12px 24px;
+  }
+
+  &__upload-img, &__file-name, &__file-desc, &__file-price {
+    margin-bottom: 24px;
+  }
+
+  &__upload-img .upload-item {
+    &__container {
+      width: 100%;
+      background-color: transparent;
+      border: 1px solid rgba(138, 138, 160, 0.3);
+      border-radius: 8px;
+      color: $white-color;
+      font-size: $fz-sm;
+      line-height: 100px;
+      overflow: hidden;
+      padding: 12px 60px;
+      position: relative;
+      resize: none;
+      cursor: pointer;
+      display: flex;
+
+      .file-name {
+        flex: 1;
+        @include flexBox(row, flex-start, center);
+      }
+
+      .file-name {
+        line-height: normal;
+      }
+
+      .upload-section {
+        position: relative;
+        @include flexBox(row, flex-end, center);
+        overflow: hidden;
+      }
+    }
+
+    &__label {
+      border: $secondary-border;
+      height: fit-content;
+      line-height: normal;
+      padding: 12px 24px;
+      border-radius: 24px;
+      font-size: $fz-sm;
+      font-weight: 600;
+      transition: $transition;
+
+      &:hover {
+        background-color: $white-color;
+        color: $blue;
+      }
+    }
+
+    &__input {
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+  }
+
+  &__file-submit {
+    @include flexBox(row, center, center);
+  }
+
+  @include mobile {
+    &__right {
+      margin-top: 12px;
+    }
+    &__upload-img .upload-item {
+      &__container {
+        flex-direction: column;
+        padding: 12px 36px;
+
+        .file-name {
+          text-align: center;
+        }
+
+        .upload-section {
+          margin-top: 12px;
+          justify-content: center;
+        }
+      }
+    }
+  }
+  @include tablet {
+    &__right {
+      margin-top: 12px;
+    }
+    &__upload-img .upload-item {
+      &__container {
+        padding: 12px 36px;
+      }
+    }
+  }
+}

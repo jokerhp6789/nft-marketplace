@@ -1,15 +1,15 @@
 @import "../../styles/index";
 
-.title {
-  &-container {
+.title-component {
+  &__container {
     @include flexBox(row, space-between, center);
     margin-bottom: 24px;
     padding-left: 0;
     padding-right: 0;
   }
 
-  &-left__side {
-    .title-text {
+  &__left-side {
+    .title-component__text {
       color: $white-color;
       text-align: left;
       @include font-size($fz-xxl, $fz-heading-h2);
@@ -19,8 +19,8 @@
   }
 
 
-  &-right__side a {
-    color: $white-color;
+  &__right-side a {
+    color: $white-color !important;
     font-size: $fz-sm;
     text-decoration: none;
     background: linear-gradient(to right, #E250E5, #4B50E6, #E250E5);
@@ -31,6 +31,7 @@
     animation: changeColorOnHover 2s ease-in-out infinite;
     transition: color .2s ease-in-out;
     position: relative;
+    cursor: pointer;
 
     &:after {
       content: '';
@@ -43,7 +44,47 @@
     }
 
     &:hover {
-      color: rgba(0, 0, 0, 0);
+      color: rgba(0, 0, 0, 0) !important;
+    }
+  }
+}
+
+.title-page {
+  &__container {
+    @include flexBox(column, center, center);
+    padding: 60px 12px;
+    background: url("../../assets/imgs/pageTitleBg.jpeg") no-repeat center;
+    background-size: cover;
+    border-bottom: .5px solid $light-grey-color;
+    margin-bottom: 24px;
+  }
+
+  &__text {
+    @include font-size($fz-xxl, $fz-heading-h1);
+    font-weight: 600;
+    color: $white-color;
+    text-transform: capitalize;
+  }
+
+  &__breadcrumb {
+    margin-top: 6px;
+    color: $light-grey-color;
+
+    &-item {
+      color: $light-grey-color;
+      text-decoration: none;
+      transition: $transition;
+
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+
+  @include mobile {
+    &__container {
+      padding-top: 36px;
+      padding-bottom: 36px;
     }
   }
 }

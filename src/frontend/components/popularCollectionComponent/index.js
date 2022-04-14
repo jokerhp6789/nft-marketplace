@@ -2,9 +2,9 @@ import "./popularCollectionComponent.scss";
 
 import React from "react";
 import {Container} from "react-bootstrap";
-import TitleComponent from "../titleComponent";
 import {PopularCollectionCard} from "./components";
 import {popularCollectionData} from "../../configs/popularCollectionData";
+import {TitleComponent} from "../titleComponent";
 
 const PopularCollectionComponent = () => {
   return (

@@ -2,7 +2,6 @@
 
 .header-container {
   background-color: $bg-section;
-  border-bottom: .5px solid $light-grey-color;
   transition: $transition;
 
   .container {
@@ -29,6 +28,10 @@
       transition: $transition;
 
       &:hover {
+        color: $blue !important;
+      }
+
+      &.is-active {
         color: $blue !important;
       }
     }

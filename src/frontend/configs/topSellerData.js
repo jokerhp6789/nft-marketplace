@@ -12,63 +12,63 @@ export const topSellerData = [
   {
     sellerAvt: Seller1,
     sellerName: "Crispin Berry",
-    sellerPriceTotal: "214.2 ETH",
+    sellerPriceTotal: 214.2,
     isVerify: true,
     sellerProfileUrl: "#"
   },
   {
     sellerAvt: Seller2,
     sellerName: "Samson Frost",
-    sellerPriceTotal: "205.43 ETH",
+    sellerPriceTotal: 205.43,
     isVerify: true,
     sellerProfileUrl: "#"
   },
   {
     sellerAvt: Seller3,
     sellerName: "Tommy Alvarez",
-    sellerPriceTotal: "170.3 ETH",
+    sellerPriceTotal: 170.3,
     isVerify: true,
     sellerProfileUrl: "#"
   },
   {
     sellerAvt: Seller4,
     sellerName: "Windsor Lane",
-    sellerPriceTotal: "120.7 ETH",
+    sellerPriceTotal: 120.7,
     isVerify: true,
     sellerProfileUrl: "#"
   },
   {
     sellerAvt: Seller5,
     sellerName: "Andy Hurlbutt",
-    sellerPriceTotal: "82.79 ETH",
+    sellerPriceTotal: 82.79,
     isVerify: true,
     sellerProfileUrl: "#"
   },
   {
     sellerAvt: Seller6,
     sellerName: "Blake Banks",
-    sellerPriceTotal: "68.2 ETH",
+    sellerPriceTotal: 68.2,
     isVerify: true,
     sellerProfileUrl: "#"
   },
   {
     sellerAvt: Seller7,
     sellerName: "Monica Lucas",
-    sellerPriceTotal: "52.8 ETH",
+    sellerPriceTotal: 52.8,
     isVerify: true,
     sellerProfileUrl: "#"
   },
   {
     sellerAvt: Seller8,
     sellerName: "Matt Ramos",
-    sellerPriceTotal: "38.4 ETH",
+    sellerPriceTotal: 38.4,
     isVerify: true,
     sellerProfileUrl: "#"
   },
   {
     sellerAvt: Seller9,
     sellerName: "Harper Wilcher",
-    sellerPriceTotal: "29.2 ETH",
+    sellerPriceTotal: 29.2,
     isVerify: true,
     sellerProfileUrl: "#"
   }

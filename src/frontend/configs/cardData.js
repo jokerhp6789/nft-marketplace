@@ -15,9 +15,9 @@ export const cardData = [
     itemUrl: "#",
     creatorName: "SalvadorDali",
     creatorAvt: CreatorImg1,
-    currentBid: "4.89 ETH",
+    currentBid: 4.89,
     countdown: "Jul 21, 2022 18:00:00",
-    numberOfLike: 100,
+    numberOfLike: null,
     creatorProfileUrl: "#"
   },
   {
@@ -26,9 +26,9 @@ export const cardData = [
     itemUrl: "#",
     creatorName: "Trista Francis",
     creatorAvt: CreatorImg2,
-    currentBid: "4.89 ETH",
+    currentBid: 4.89,
     countdown: "Jul 21, 2022 18:00:00",
-    numberOfLike: 220,
+    numberOfLike: null,
     creatorProfileUrl: "#"
   },
   {
@@ -37,9 +37,9 @@ export const cardData = [
     itemUrl: "#",
     creatorName: "Freddie Carpenter",
     creatorAvt: CreatorImg3,
-    currentBid: "4.89 ETH",
+    currentBid: 4.89,
     countdown: "Jul 21, 2022 18:00:00",
-    numberOfLike: 90,
+    numberOfLike: null,
     creatorProfileUrl: "#"
   },
   {
@@ -48,9 +48,9 @@ export const cardData = [
     itemUrl: "#",
     creatorName: "Tyler Covington",
     creatorAvt: CreatorImg4,
-    currentBid: "4.89 ETH",
+    currentBid: 4.89,
     countdown: "Jul 21, 2022 18:00:00",
-    numberOfLike: 145,
+    numberOfLike: null,
     creatorProfileUrl: "#"
   },
   {
@@ -59,9 +59,9 @@ export const cardData = [
     itemUrl: "#",
     creatorName: "SalvadorDali",
     creatorAvt: CreatorImg1,
-    currentBid: "4.89 ETH",
+    currentBid: 4.89,
     countdown: "Jul 21, 2022 18:00:00",
-    numberOfLike: 100,
+    numberOfLike: null,
     creatorProfileUrl: "#"
   },
   {
@@ -70,9 +70,9 @@ export const cardData = [
     itemUrl: "#",
     creatorName: "Trista Francis",
     creatorAvt: CreatorImg2,
-    currentBid: "4.89 ETH",
+    currentBid: 4.89,
     countdown: "Jul 21, 2022 18:00:00",
-    numberOfLike: 220,
+    numberOfLike: null,
     creatorProfileUrl: "#"
   },
   {
@@ -81,9 +81,9 @@ export const cardData = [
     itemUrl: "#",
     creatorName: "Freddie Carpenter",
     creatorAvt: CreatorImg3,
-    currentBid: "4.89 ETH",
+    currentBid: 4.89,
     countdown: "Jul 21, 2022 18:00:00",
-    numberOfLike: 90,
+    numberOfLike: null,
     creatorProfileUrl: "#"
   }
 ];

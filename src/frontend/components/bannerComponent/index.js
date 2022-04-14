@@ -10,10 +10,12 @@ import {IoIosRocket} from "react-icons/io";
 import BgGradient1 from "../../assets/imgs/banner/bg-gradient1.png";
 import BgGradient2 from "../../assets/imgs/banner/bg-gradient2.png";
 import BgGradient3 from "../../assets/imgs/banner/bg-gradient3.png";
+import {useNavigate} from "react-router";
 
 const bgGradient = [BgGradient1, BgGradient2, BgGradient3];
 
 const BannerComponent = () => {
+  const navigate = useNavigate();
   return (
     <Container fluid className="banner-component">
       <Container fluid={"xxl"}>
@@ -35,8 +37,8 @@ const BannerComponent = () => {
               token
               NFTs</p>
             <div className="banner-left__btn d-flex justify-content-center align-items-center">
-              <ButtonComponent btnName="Explore" btnIcon={<IoIosRocket/>}/>
-              <ButtonComponent btnName="Create" btnIcon={<CgFileDocument/>}/>
+              <ButtonComponent btnName="Explore" btnIcon={<IoIosRocket/>} btnEvent={() => navigate("/explore")}/>
+              <ButtonComponent btnName="Create" btnIcon={<CgFileDocument/>} btnEvent={() => navigate("/create")}/>
             </div>
           </Col>
           <Col lg={6} md={6} className="banner-right__side">
