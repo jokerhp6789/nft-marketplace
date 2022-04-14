@@ -4,12 +4,12 @@ import {useState} from "react";
 import {ethers} from "ethers";
 import {Row, Form, Button, Container, Col} from "react-bootstrap";
 import {create as ipfsHttpClient} from "ipfs-http-client";
-import {TitleComponent, TitlePage} from "../titleComponent";
-import CardComponent from "../cardComponent";
+import {TitleComponent, TitlePage} from "../../components/titleComponent";
+import CardComponent from "../../components/cardComponent";
 import ExampleImg1 from "../../assets/imgs/liveAuctions/exampleImg1.jpg";
 import CreatorImg1 from "../../assets/imgs/liveAuctions/creatorImg1.jpg";
-import ToastNoti from "../toastNotiComponent";
-import ButtonComponent from "../buttonComponent";
+import ToastNoti from "../../components/toastNotiComponent";
+import ButtonComponent from "../../components/buttonComponent";
 
 const client = ipfsHttpClient("https://ipfs.infura.io:5001/api/v0");
 

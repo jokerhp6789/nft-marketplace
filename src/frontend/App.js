@@ -5,9 +5,9 @@ import {
   Routes,
   Route
 } from "react-router-dom";
-import HomePage from "./components/homePage/homePage";
-import MyListedItems from "./components/listItemComponent/MyListedItems.js";
-import MyPurchases from "./components/myPurchasesComponent/MyPurchases.js";
+import HomePage from "./pages/homePage/homePage";
+import MyListedItems from "./pages/listItemPage/MyListedItems.js";
+import MyPurchases from "./pages/myPurchasesPage/MyPurchases.js";
 import MarketplaceAbi from "./contractsData/Marketplace.json";
 import MarketplaceAddress from "./contractsData/Marketplace-address.json";
 import NFTAbi from "./contractsData/NFT.json";
@@ -18,10 +18,10 @@ import {Spinner} from "react-bootstrap";
 import HeaderNavigation from "./components/headerNavigation";
 import CardComponent from "./components/cardComponent";
 import FooterComponent from "./components/footerComponent";
-import CreatePage from "./components/createPage";
+import CreatePage from "./pages/createPage";
 
 function App() {
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(false);
   const [account, setAccount] = useState(null);
   const [nft, setNFT] = useState({});
   const [marketplace, setMarketplace] = useState({});
@@ -50,9 +50,8 @@ function App() {
     setMarketplace(marketplace);
     const nft = new ethers.Contract(NFTAddress.address, NFTAbi.abi, signer);
     setNFT(nft);
-    setLoading(false);
+    // setLoading(false);
   };
-  
   return (
     <BrowserRouter>
       <div className="App overflow-hidden">
@@ -60,32 +59,32 @@ function App() {
           <HeaderNavigation web3Handler={web3Handler} account={account}/>
         </>
         <div>
-          {loading ? (
-            <div style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              minHeight: "80vh"
-            }}>
-              <Spinner animation="border" style={{display: "flex"}}/>
-              <p className="mx-3 my-0">Awaiting Metamask Connection...</p>
-            </div>
-          ) : (
-            <Routes>
-              <Route path="/" element={
-                <HomePage marketplace={marketplace} nft={nft}/>
-              }/>
-              <Route path="/create" element={
-                <CreatePage marketplace={marketplace} nft={nft}/>
-              }/>
-              {/*<Route path="/my-listed-items" element={*/}
-              {/*  <MyListedItems marketplace={marketplace} nft={nft} account={account}/>*/}
-              {/*}/>*/}
-              {/*<Route path="/my-purchases" element={*/}
-              {/*  <MyPurchases marketplace={marketplace} nft={nft} account={account}/>*/}
-              {/*}/>*/}
-            </Routes>
-          )}
+          {/*{loading ? (*/}
+          {/*  <div style={{*/}
+          {/*    display: "flex",*/}
+          {/*    justifyContent: "center",*/}
+          {/*    alignItems: "center",*/}
+          {/*    minHeight: "80vh"*/}
+          {/*  }}>*/}
+          {/*    <Spinner animation="border" style={{display: "flex"}}/>*/}
+          {/*    <p className="mx-3 my-0">Awaiting Metamask Connection...</p>*/}
+          {/*  </div>*/}
+          {/*) : (*/}
+          <Routes>
+            <Route path="/" element={
+              <HomePage marketplace={marketplace} nft={nft}/>
+            }/>
+            <Route path="/create" element={
+              <CreatePage marketplace={marketplace} nft={nft}/>
+            }/>
+            {/*<Route path="/my-listed-items" element={*/}
+            {/*  <MyListedItems marketplace={marketplace} nft={nft} account={account}/>*/}
+            {/*}/>*/}
+            {/*<Route path="/my-purchases" element={*/}
+            {/*  <MyPurchases marketplace={marketplace} nft={nft} account={account}/>*/}
+            {/*}/>*/}
+          </Routes>
+          {/*)}*/}
         </div>
         <>
           <FooterComponent/>

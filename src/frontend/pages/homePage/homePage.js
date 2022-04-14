@@ -3,12 +3,12 @@ import "./homePage.scss";
 import {useState, useEffect} from "react";
 import {ethers} from "ethers";
 import {Row, Col, Card, Button, Container} from "react-bootstrap";
-import BannerComponent from "../bannerComponent";
-import LiveAuctionsComponent from "../liveAuctionsComponent";
-import TopSellerComponent from "../topSellerComponent";
-import TodayPickComponent from "../todayPickComponent";
-import PopularCollectionComponent from "../popularCollectionComponent";
-import ProjectFeatureComponent from "../projectFeatureComponent";
+import BannerComponent from "../../components/bannerComponent";
+import LiveAuctionsComponent from "../../components/liveAuctionsComponent";
+import TopSellerComponent from "../../components/topSellerComponent";
+import TodayPickComponent from "../../components/todayPickComponent";
+import PopularCollectionComponent from "../../components/popularCollectionComponent";
+import ProjectFeatureComponent from "../../components/projectFeatureComponent";
 
 const HomePage = ({
                     marketplace,
