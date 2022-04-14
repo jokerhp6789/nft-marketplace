@@ -56,7 +56,7 @@ const CreatePage = ({
         // console.log("ipfs image upload error: ", error);
         setNotiMsg({
           title: "Error",
-          content: error
+          content: `ipfs image upload error: ${error.message}`
         });
       }
     } else {
@@ -78,7 +78,10 @@ const CreatePage = ({
       }));
       await mintThenList(result);
     } catch (error) {
-      console.log("ipfs uri upload error: ", error);
+      setNotiMsg({
+        title: "Error",
+        content: `ipfs uri upload error: ${error.message}`
+      });
     }
   };
   
@@ -97,42 +100,6 @@ const CreatePage = ({
   
   return (
     <>
-      <div className="container-fluid mt-5">
-        <div className="row">
-          <main role="main" className="col-lg-12 mx-auto" style={{maxWidth: "1000px"}}>
-            <div className="content mx-auto">
-              <Row className="g-4">
-                <Form.Control
-                  type="file"
-                  required
-                  name="file"
-                  onChange={uploadToIPFS}
-                />
-                <Form.Control onChange={(e) => setName(e.target.value)}
-                              size="lg"
-                              required
-                              type="text"
-                              placeholder="Name"/>
-                <Form.Control onChange={(e) => setDescription(e.target.value)}
-                              size="lg"
-                              required
-                              as="textarea"
-                              placeholder="Description"/>
-                <Form.Control onChange={(e) => setPrice(e.target.value)}
-                              size="lg"
-                              required
-                              type="number"
-                              placeholder="Price in ETH"/>
-                <div className="d-grid px-0">
-                  <Button onClick={createNFT} variant="primary" size="lg">
-                    Create & List NFT!
-                  </Button>
-                </div>
-              </Row>
-            </div>
-          </main>
-        </div>
-      </div>
       <Container className="create-page" fluid>
         <TitlePage titleText={"Create item"}/>
         <Container fluid={"xxl"}>
@@ -143,8 +110,8 @@ const CreatePage = ({
                 <CardComponent itemUrl={exampleCard.itemUrl}
                                itemImg={image || exampleCard.img}
                                isHidePlaceBid={false}
-                               itemTitle={exampleCard.title}
-                               itemPrice={exampleCard.currentBid}
+                               itemTitle={name || exampleCard.title}
+                               itemPrice={price || exampleCard.currentBid}
                                itemUserAvt={exampleCard.creatorAvt}
                                itemUserProfileUrl={exampleCard.creatorProfileUrl}
                                likesOfItem={exampleCard.numberOfLike}
@@ -182,13 +149,16 @@ const CreatePage = ({
                        placeholder="Price in ETH" onChange={(e) => setPrice(e.target.value)}/>
               </div>
               <div className="create-page__file-submit">
-                <ButtonComponent btnEvent={createNFT} btnName={"Create NFT"} isPrimary={false}/>
+                <ButtonComponent btnEvent={createNFT}
+                                 btnName={"Create NFT"}
+                                 isPrimary={false}
+                                 isDisable={!name || !price || !description || !image}/>
               </div>
             </Col>
           </Row>
         </Container>
       </Container>
-      <ToastNoti errorMsg={notiMsg.content} titleNoti={notiMsg.title}/>
+      <ToastNoti errorMsg={notiMsg.content} titleNoti={notiMsg.title} setErrMsg={setNotiMsg}/>
     </>
   );
 };

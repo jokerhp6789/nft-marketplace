@@ -72,7 +72,7 @@ export const SliderLiveAuctions = ({
             <>
               {
                 (currentWindowWidth >= 1300 ? index < 4 : index < 5) && (
-                  <div key={val}
+                  <div key={val.title}
                        className={`slider-direction__step ${index === sliderStepSelected && "slider-direction__active"}`}>
                     <div className="slider-direction__step-item" onClick={() => onMoveNextCard(index)}/>
                   </div>

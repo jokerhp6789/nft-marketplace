@@ -23,6 +23,16 @@
     background-color: $white-color;
   }
 
+  &:disabled {
+    border-color: $dark-grey-color;
+    color: $dark-grey-color;
+
+    &:hover {
+      color: $dark-grey-color;
+      background-color: unset;
+    }
+  }
+
   &.btn-space {
     padding: 15px 20px;
 

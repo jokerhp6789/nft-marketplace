@@ -22,21 +22,12 @@ const CardComponent = ({
                          isComing = false,
                          isHidePlaceBid = true
                        }) => {
-  const cardRef = useRef(null);
-  const [cardWidth, setCardWidth] = useState(0);
   const [isShowPlaceBid, setIsShowPlaceBid] = useState(false);
-  useEffect(() => {
-    setCardWidth(cardRef?.current?.offsetWidth);
-  }, [cardRef]);
   return (
-    <div ref={cardRef} className="card-container"
+    <div className="card-container"
          onMouseEnter={() => setIsShowPlaceBid(true)}
          onMouseLeave={() => setIsShowPlaceBid(false)}>
-      <div className="card-media"
-           style={{
-             width: `${cardWidth - 40}px`,
-             height: `${cardWidth - 40}px`
-           }}>
+      <div className="card-media">
         <div className="card-badge__container">
           <BadgeCompent numberOfLike={likesOfItem}/>
         </div>
@@ -84,7 +75,7 @@ const CardComponent = ({
           </div>
           <div className="card-content__price">
             <h6 className="title">Current Bid</h6>
-            <p className="price">{itemPrice}</p>
+            <p className="price">{itemPrice} ETH</p>
           </div>
         </div>
       </div>
