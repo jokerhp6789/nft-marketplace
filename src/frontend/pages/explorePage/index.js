@@ -1,10 +1,11 @@
 import "./explorePage.scss";
 
 import React, {useEffect, useState} from "react";
-import {Button, Card, Col, Container, Row, Spinner} from "react-bootstrap";
+import {Container, Spinner} from "react-bootstrap";
 import {TitlePage} from "../../components/titleComponent";
 import {ethers} from "ethers";
 import CardComponent from "../../components/cardComponent";
+import EmptyResultComponent from "../../components/emptyResultComponent";
 
 const ExplorePage = ({
                        marketplace,
@@ -88,7 +89,7 @@ const ExplorePage = ({
                                buyItemFunc={() => buyMarketItem(val)}/>
               </div>
             )) : (
-              <></>
+              <EmptyResultComponent/>
             )
           }
         </div>

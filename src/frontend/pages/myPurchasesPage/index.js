@@ -5,6 +5,7 @@ import {ethers} from "ethers";
 import {Spinner, Container} from "react-bootstrap";
 import {TitlePage} from "../../components/titleComponent";
 import CardComponent from "../../components/cardComponent";
+import EmptyResultComponent from "../../components/emptyResultComponent";
 
 const MyPurchasesPage = ({
                            marketplace,
@@ -85,7 +86,7 @@ const MyPurchasesPage = ({
                                    itemPrice={ethers.utils.formatEther(val.totalPrice)} itemDesc={val.description}/>
                   </div>
                 )) : (
-                  <></>
+                  <EmptyResultComponent/>
                 )
             }
           </div>
