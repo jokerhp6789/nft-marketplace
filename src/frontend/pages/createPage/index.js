@@ -1,8 +1,8 @@
 import "./createPage.scss";
 
-import {useState} from "react";
+import React, {useState} from "react";
 import {ethers} from "ethers";
-import {Row, Container, Col} from "react-bootstrap";
+import {Row, Container, Col, Spinner} from "react-bootstrap";
 import {create as ipfsHttpClient} from "ipfs-http-client";
 import {TitlePage} from "../../components/titleComponent";
 import CardComponent from "../../components/cardComponent";
@@ -28,7 +28,8 @@ const exampleCard = {
 
 const CreatePage = ({
                       marketplace,
-                      nft
+                      nft,
+                      isNeedConnect
                     }) => {
   const [image, setImage] = useState("");
   const [price, setPrice] = useState(null);
@@ -47,14 +48,12 @@ const CreatePage = ({
     if (typeof file !== "undefined") {
       try {
         const result = await client.add(file);
-        // console.log(result);
         setImage(`https://ipfs.infura.io/ipfs/${result.path}`);
         setNotiMsg({
           title: "Success",
           content: "Upload file success"
         });
       } catch (error) {
-        // console.log("ipfs image upload error: ", error);
         setNotiMsg({
           title: "Error",
           content: `ipfs image upload error: ${error.message}`
@@ -99,7 +98,17 @@ const CreatePage = ({
     await (await marketplace.makeItem(nft.address, id, listingPrice)).wait();
   };
   
-  return (
+  return isNeedConnect ? (
+    <div style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      minHeight: "80vh"
+    }}>
+      <Spinner animation="border" style={{display: "flex"}}/>
+      <p className="mx-3 my-0">Awaiting Metamask Connection...</p>
+    </div>
+  ) : (
     <>
       <Container className="create-page" fluid>
         <TitlePage titleText={"Create item"}/>

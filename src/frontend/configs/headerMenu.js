@@ -4,6 +4,10 @@ export const headerMenu = [
     label: "Home"
   },
   {
+    path: "/explore",
+    label: "Explore"
+  },
+  {
     path: "/create",
     label: "Create"
   },

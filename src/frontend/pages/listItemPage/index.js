@@ -1,6 +1,6 @@
 import "./listItemPage.scss";
 
-import {useState, useEffect} from "react";
+import React, {useState, useEffect} from "react";
 import {ethers} from "ethers";
 import {Row, Col, Card, Spinner, Container} from "react-bootstrap";
 import {TitleComponent, TitlePage} from "../../components/titleComponent";
@@ -31,7 +31,8 @@ function renderSoldItems(items) {
 const MyListedPage = ({
                         marketplace,
                         nft,
-                        account
+                        account,
+                        isNeedConnect
                       }) => {
   const [loading, setLoading] = useState(true);
   const [listedItems, setListedItems] = useState([]);
@@ -74,7 +75,17 @@ const MyListedPage = ({
     loadListedItems();
   }, []);
   
-  return loading ? (
+  return isNeedConnect ? (
+    <div style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      minHeight: "80vh"
+    }}>
+      <Spinner animation="border" style={{display: "flex"}}/>
+      <p className="mx-3 my-0">Awaiting Metamask Connection...</p>
+    </div>
+  ) : loading ? (
     <div style={{
       display: "flex",
       justifyContent: "center",

@@ -37,7 +37,7 @@ const BannerComponent = () => {
               token
               NFTs</p>
             <div className="banner-left__btn d-flex justify-content-center align-items-center">
-              <ButtonComponent btnName="Explore" btnIcon={<IoIosRocket/>}/>
+              <ButtonComponent btnName="Explore" btnIcon={<IoIosRocket/>} btnEvent={() => navigate("/explore")}/>
               <ButtonComponent btnName="Create" btnIcon={<CgFileDocument/>} btnEvent={() => navigate("/create")}/>
             </div>
           </Col>

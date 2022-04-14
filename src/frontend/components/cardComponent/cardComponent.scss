@@ -122,12 +122,16 @@
           }
         }
 
+        a {
+          cursor: pointer;
+        }
+
         .description {
           color: $light-grey-color;
           @include font-size($fz-sm, $fz-md);
 
           &:hover {
-            color: unset;
+            color: $light-grey-color;
           }
         }
       }

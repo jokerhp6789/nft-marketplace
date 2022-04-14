@@ -14,7 +14,7 @@ const ProjectFeatureComponent = () => {
         <div className="project-feature__container">
           {
             projectFeatureData.map((val, index) => (
-              <div className="project-feature__item">
+              <div key={index} className="project-feature__item">
                 <FeatureItem title={val.title}
                              desc={val.desc}
                              featureUrl={val.featureUrl}

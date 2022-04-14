@@ -21,7 +21,7 @@ const HeaderNavigation = ({
   return (
     <Navbar collapseOnSelect expand="lg" className={`header-container ${offset !== 0 && "header-container__fixed"}`}>
       <Container>
-        <Navbar.Brand href="/" className="header-logo">
+        <Navbar.Brand as={Link} to="/" className="header-logo">
           <img src={Logo} alt=""/>
         </Navbar.Brand>
         <div className="d-flex justify-content-center align-items-center">

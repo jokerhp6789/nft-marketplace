@@ -1,6 +1,6 @@
 import "./myPurchasesPage.scss";
 
-import {useState, useEffect} from "react";
+import React, {useState, useEffect} from "react";
 import {ethers} from "ethers";
 import {Spinner, Container} from "react-bootstrap";
 import {TitlePage} from "../../components/titleComponent";
@@ -9,7 +9,8 @@ import CardComponent from "../../components/cardComponent";
 const MyPurchasesPage = ({
                            marketplace,
                            nft,
-                           account
+                           account,
+                           isNeedConnect
                          }) => {
   const [loading, setLoading] = useState(true);
   const [purchases, setPurchases] = useState([]);
@@ -47,7 +48,17 @@ const MyPurchasesPage = ({
     loadPurchasedItems();
   }, []);
   
-  return loading ? (
+  return isNeedConnect ? (
+    <div style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      minHeight: "80vh"
+    }}>
+      <Spinner animation="border" style={{display: "flex"}}/>
+      <p className="mx-3 my-0">Awaiting Metamask Connection...</p>
+    </div>
+  ) : loading ? (
     <div style={{
       display: "flex",
       justifyContent: "center",
