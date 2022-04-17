@@ -22,6 +22,7 @@ const CardComponent = ({
                          itemHistoryUrl,
                          itemDesc,
                          buyItemFunc,
+                         btnName,
                          isBuy = false,
                          isOwner = false,
                          isComing = false,
@@ -48,9 +49,11 @@ const CardComponent = ({
             </div>
           )
         }
-        <a href="#">
+        <p onClick={() => {
+          itemId && navigate(`/explore/${itemId}`);
+        }}>
           <img src={itemImg} alt=""/>
-        </a>
+        </p>
         {/*{*/}
         {/*  (isHidePlaceBid && isShowPlaceBid) && (*/}
         {/*    <div className="card-media__place-bid">*/}
@@ -73,10 +76,10 @@ const CardComponent = ({
         <div className="card-content__title d-flex">
           <div className="title">
             <p onClick={() => {
-              itemId && navigate(`/item-detail/${itemId}`);
+              itemId && navigate(`/explore/${itemId}`);
             }}>"{itemTitle}"</p>
             {
-              itemDesc && <span className="description">"{itemDesc}"</span>
+              itemDesc && <span className="description">{itemDesc}</span>
             }
           </div>
           {/*<div className="tags">*/}
@@ -98,7 +101,7 @@ const CardComponent = ({
           {
             (!itemHistoryUrl && !isHidePlaceBid && !isComing) && (
               <div className="card-place__bid-btn">
-                <ButtonComponent btnName={isBuy ? "Bought" : "Buy now"}
+                <ButtonComponent btnName={btnName}
                                  btnIcon={<MdShoppingBag/>}
                                  isDisable={isBuy || !buyItemFunc} btnEvent={buyItemFunc}/>
               </div>

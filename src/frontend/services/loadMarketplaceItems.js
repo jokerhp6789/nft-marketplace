@@ -1,6 +1,7 @@
-const getItemFromMarketplace = async (marketplace, nft, itemId,) => {
+const getItemFromMarketplace = async (marketplace, nft, itemId) => {
   const item = await marketplace.items(itemId);
-  if (!item?.sold) {
+  console.log(item);
+  if (item) {
     // get uri url from nft contract
     const uri = await nft?.tokenURI(item?.tokenId);
     // use uri to fetch the nft metadata stored on ipfs
@@ -35,11 +36,10 @@ export const loadMarketplaceItems = async (marketplace, nft, itemId = null) => {
         seller: item.seller,
         name: metadata.name,
         description: metadata.description,
-        image: metadata.image
+        image: metadata.image,
+        sold: item.sold
       });
     }
-    
-    console.log(itemId);
   } else {
     const {
       item,
@@ -53,7 +53,8 @@ export const loadMarketplaceItems = async (marketplace, nft, itemId = null) => {
       seller: item.seller,
       name: metadata.name,
       description: metadata.description,
-      image: metadata.image
+      image: metadata.image,
+      sold: item.sold
     });
   }
   

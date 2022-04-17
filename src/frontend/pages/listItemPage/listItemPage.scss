@@ -6,7 +6,8 @@
   padding-bottom: 24px;
 
   &__items {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     gap: 12px;
   }
 
@@ -17,27 +18,23 @@
   }
 
   @include mobile {
-    &__items {
-      grid-template-columns: repeat(1, 1fr);
+    &__items .item {
+      width: 100%;
     }
   }
   @include tablet {
-    &__items {
-      grid-template-columns: repeat(2, 1fr);
+    &__items .item {
+      width: calc((100% / 2) - 12px);
     }
   }
   @include desktop {
-    &__items {
-      grid-template-columns: repeat(3, 1fr);
-
-      //.item:last-child {
-      //  display: none;
-      //}
+    &__items .item {
+      width: calc((100% / 3) - 12px);
     }
   }
   @include wide-desktop {
-    &__items {
-      grid-template-columns: repeat(4, 1fr);
+    &__items .item {
+      width: calc((100% / 4) - 12px);
     }
   }
 }

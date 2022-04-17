@@ -13,11 +13,11 @@ export const DisplayListedItem = ({
             {
               index < 7 && (
                 <div key={index} className="item">
-                  <CardComponent itemTitle={val.name}
+                  <CardComponent itemTitle={val.name} itemId={val.itemId}
                                  itemImg={val.image}
                                  isHidePlaceBid={false}
-                                 isBuy={isBuy}
-                                 itemPrice={ethers.utils.formatEther(val.totalPrice)} itemDesc={val.description} />
+                                 isBuy={isBuy} btnName={val.sold ? "Sold" : "Buy now"}
+                                 itemPrice={ethers.utils.formatEther(val.totalPrice)} itemDesc={val.description}/>
                 </div>
               )
             }

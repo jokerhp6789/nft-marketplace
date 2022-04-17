@@ -75,7 +75,8 @@ function App() {
             <Route path="/my-purchases" element={
               <MyPurchasesPage marketplace={marketplace} nft={nft} account={account} isNeedConnect={loading}/>
             }/>
-            <Route path="/item-detail/:itemId" element={<ItemDetailPage marketplace={marketplace} nft={nft} isNeedConnect={loading}/>}/>
+            <Route path="/explore/:itemId"
+                   element={<ItemDetailPage marketplace={marketplace} nft={nft} isNeedConnect={loading}/>}/>
           </Routes>
         </div>
         <>

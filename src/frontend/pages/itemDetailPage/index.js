@@ -1,10 +1,13 @@
 import "./itemDetail.scss";
 
 import React, {useEffect, useState} from "react";
-import {useParams} from "react-router";
+import {useNavigate, useParams} from "react-router";
 import {loadMarketplaceItems} from "../../services";
 import {Col, Container, Row, Spinner} from "react-bootstrap";
 import {TitlePage} from "../../components/titleComponent";
+import {ethers} from "ethers";
+import ButtonComponent from "../../components/buttonComponent";
+import {MdShoppingBag} from "react-icons/md";
 
 const ItemDetailPage = ({
                           marketplace,
@@ -12,6 +15,7 @@ const ItemDetailPage = ({
                           isNeedConnect
                         }) => {
   const params = useParams();
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [item, setItem] = useState([]);
   
@@ -22,6 +26,13 @@ const ItemDetailPage = ({
       setLoading(false);
     })();
   }, [marketplace, nft, params.itemId]);
+  
+  console.log(item);
+  
+  const buyMarketItem = async (item) => {
+    await (await marketplace.purchaseItem(item.itemId, {value: item.totalPrice})).wait();
+    navigate("/my-purchases");
+  };
   
   return isNeedConnect ? (
     <div style={{
@@ -48,12 +59,23 @@ const ItemDetailPage = ({
       <TitlePage titleText={item?.[0]?.name} paramsName={"itemId"}/>
       <Container fluid={"xxl"}>
         <Row className="item-detail__page__container">
-          <Col className="item-detail__page-left">
+          <Col lg={6} md={6} sm={12} className="item-detail__page-left">
             <img src={item?.[0]?.image} alt=""/>
           </Col>
-          <Col className="item-detail__page-right">
+          <Col lg={6} md={6} sm={12} className="item-detail__page-right">
             <h5 className="title">"{item?.[0]?.name}"</h5>
             <p className="description">{item?.[0]?.description}</p>
+            <div className="current-price">
+              <p className="current-price__title">
+                Current price
+              </p>
+              <p className="current-price__detail">{ethers.utils.formatEther(item?.[0]?.totalPrice)} ETH</p>
+            </div>
+            <div className="buy-now">
+              <ButtonComponent btnEvent={() => buyMarketItem(item?.[0])}
+                               btnName={item?.[0]?.sold ? "Sold" : "Buy now"} isDisable={item?.[0]?.sold}
+                               btnIcon={<MdShoppingBag/>}/>
+            </div>
           </Col>
         </Row>
       </Container>

@@ -38,7 +38,8 @@ const MyListedPage = ({
           itemId: i.itemId,
           name: metadata.name,
           description: metadata.description,
-          image: metadata.image
+          image: metadata.image,
+          sold: i.sold
         };
         listedItems.push(item);
         // Add listed item to sold items array if sold
