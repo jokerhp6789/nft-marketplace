@@ -24,7 +24,7 @@ const exampleCard = {
   countdown: "Jul 21, 2022 18:00:00",
   numberOfLike: null,
   creatorProfileUrl: "#",
-  desc: "This is test desc"
+  desc: "This is very limited item."
 };
 
 const CreatePage = ({

@@ -79,26 +79,34 @@ const MyListedPage = ({
       <Container className="my-listed" fluid>
         <TitlePage titleText="My listed items"/>
         <Container fluid={"xxl"}>
-          <div className="my-listed__container">
-            <TitleComponent titleText="Listed" isHasExplore={true}/>
-            {
-              listedItems.length > 0 ? (
-                <DisplayListedItem data={listedItems} isBuy={false}/>
-              ) : (
-                <EmptyResultComponent/>
-              )
-            }
-          </div>
-          <div className="my-listed__container">
-            <TitleComponent titleText="Sold" isHasExplore={true}/>
-            {
-              soldItems.length > 0 ? (
-                <DisplayListedItem data={soldItems} isBuy={true}/>
-              ) : (
-                <EmptyResultComponent/>
-              )
-            }
-          </div>
+          {
+            (listedItems.length > 0 && soldItems.length > 0) ? (
+              <>
+                <div className="my-listed__container">
+                  <TitleComponent titleText="Listed" isHasExplore={true}/>
+                  {
+                    listedItems.length > 0 ? (
+                      <DisplayListedItem data={listedItems} isBuy={false}/>
+                    ) : (
+                      <EmptyResultComponent/>
+                    )
+                  }
+                </div>
+                <div className="my-listed__container">
+                  <TitleComponent titleText="Sold" isHasExplore={true}/>
+                  {
+                    soldItems.length > 0 ? (
+                      <DisplayListedItem data={soldItems} isBuy={true}/>
+                    ) : (
+                      <EmptyResultComponent/>
+                    )
+                  }
+                </div>
+              </>
+            ) : (
+              <EmptyResultComponent/>
+            )
+          }
         </Container>
       </Container>
     </>

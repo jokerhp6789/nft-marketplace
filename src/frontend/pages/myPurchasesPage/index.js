@@ -86,7 +86,9 @@ const MyPurchasesPage = ({
                                    itemPrice={ethers.utils.formatEther(val.totalPrice)} itemDesc={val.description}/>
                   </div>
                 )) : (
-                  <EmptyResultComponent/>
+                  <div style={{width: "100%"}}>
+                    <EmptyResultComponent/>
+                  </div>
                 )
             }
           </div>
