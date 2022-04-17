@@ -1,0 +1,68 @@
+@import "../../styles/index";
+
+.item-detail__page {
+  padding-right: 0;
+  padding-left: 0;
+  padding-bottom: 24px;
+
+  &-left {
+    img {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 24px;
+    }
+
+    @include mobile {
+      margin-bottom: 24px;
+    }
+  }
+
+  &-right {
+    .title, .description, .current-price {
+      margin-bottom: 24px;
+    }
+
+    .title {
+      font-size: $fz-heading-h2;
+      color: $white-color;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    .description {
+      font-size: $fz-sm;
+      color: $dark-grey-color;
+      text-align: left;
+      line-height: 22px;
+    }
+
+    .current-price {
+      background-color: $primary-color;
+      @include flexBox(row, center, center);
+      padding: 12px;
+      border-radius: 12px;
+
+      &__title, &__detail {
+        flex: 1;
+      }
+
+      &__title {
+        text-transform: capitalize;
+        color: $white-color;
+        font-size: $fz-sm;
+      }
+
+      &__detail {
+        font-size: $fz-md;
+        color: $white-color;
+        font-weight: 600;
+        text-align: right;
+      }
+    }
+
+    .buy-now {
+      width: 100%;
+      @include flexBox(row, center, center);
+    }
+  }
+}

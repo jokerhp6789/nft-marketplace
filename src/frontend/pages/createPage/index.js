@@ -24,7 +24,7 @@ const exampleCard = {
   countdown: "Jul 21, 2022 18:00:00",
   numberOfLike: null,
   creatorProfileUrl: "#",
-  desc: "This is test desc"
+  desc: "This is very limited item."
 };
 
 const CreatePage = ({
@@ -42,6 +42,7 @@ const CreatePage = ({
     title: "",
     content: ""
   });
+  const [createLoading, setCreateLoading] = useState(false);
   
   const uploadToIPFS = async (event) => {
     event.preventDefault();
@@ -70,6 +71,7 @@ const CreatePage = ({
   };
   
   const createNFT = async () => {
+    setCreateLoading(true);
     if (!image || !price || !name || !description) return;
     try {
       const result = await client.add(JSON.stringify({
@@ -84,6 +86,7 @@ const CreatePage = ({
         title: "Error",
         content: `ipfs uri upload error: ${error.message}`
       });
+      setCreateLoading(false);
     }
   };
   
@@ -100,6 +103,7 @@ const CreatePage = ({
     await (await marketplace.makeItem(nft.address, id, listingPrice)).wait();
     
     navigate("/explore");
+    setCreateLoading(false);
   };
   
   return isNeedConnect ? (
@@ -164,9 +168,9 @@ const CreatePage = ({
               </div>
               <div className="create-page__file-submit">
                 <ButtonComponent btnEvent={createNFT}
-                                 btnName={"Create NFT"}
+                                 btnName={createLoading ? "Creating NFT" : "Create NFT"}
                                  isPrimary={false}
-                                 isDisable={!name || !price || !description || !image}/>
+                                 isDisable={!name || !price || !description || !image || createLoading}/>
               </div>
             </Col>
           </Row>

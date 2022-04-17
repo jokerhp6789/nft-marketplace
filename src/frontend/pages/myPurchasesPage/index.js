@@ -78,15 +78,17 @@ const MyPurchasesPage = ({
             {
               purchases.length > 0 ?
                 purchases.map((val, index) => (
-                  <div className="my-purchases__item">
-                    <CardComponent itemTitle={val.name}
+                  <div key={index} className="my-purchases__item">
+                    <CardComponent itemTitle={val.name} itemId={val.itemId}
                                    itemImg={val.image}
                                    isHidePlaceBid={false}
-                                   isBuy={true}
+                                   isBuy={true} btnName={"Bought"}
                                    itemPrice={ethers.utils.formatEther(val.totalPrice)} itemDesc={val.description}/>
                   </div>
                 )) : (
-                  <EmptyResultComponent/>
+                  <div style={{width: "100%"}}>
+                    <EmptyResultComponent/>
+                  </div>
                 )
             }
           </div>

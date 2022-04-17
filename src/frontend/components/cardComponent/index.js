@@ -6,8 +6,10 @@ import ButtonComponent from "../buttonComponent";
 import {MdShoppingBag} from "react-icons/md";
 import {BiRefresh} from "react-icons/bi";
 import BadgeCompent from "../badgeComponent";
+import {useNavigate} from "react-router";
 
 const CardComponent = ({
+                         itemId,
                          likesOfItem,
                          itemImg,
                          itemTitle,
@@ -20,11 +22,13 @@ const CardComponent = ({
                          itemHistoryUrl,
                          itemDesc,
                          buyItemFunc,
+                         btnName,
                          isBuy = false,
                          isOwner = false,
                          isComing = false,
                          isHidePlaceBid = true
                        }) => {
+  const navigate = useNavigate();
   const [isShowPlaceBid, setIsShowPlaceBid] = useState(false);
   return (
     <div className="card-container"
@@ -45,9 +49,11 @@ const CardComponent = ({
             </div>
           )
         }
-        <a href="#">
+        <p onClick={() => {
+          itemId && navigate(`/explore/${itemId}`);
+        }}>
           <img src={itemImg} alt=""/>
-        </a>
+        </p>
         {/*{*/}
         {/*  (isHidePlaceBid && isShowPlaceBid) && (*/}
         {/*    <div className="card-media__place-bid">*/}
@@ -69,7 +75,9 @@ const CardComponent = ({
       <div className="card-content">
         <div className="card-content__title d-flex">
           <div className="title">
-            <a href={itemUrl}>{itemTitle}</a>
+            <p onClick={() => {
+              itemId && navigate(`/explore/${itemId}`);
+            }}>"{itemTitle}"</p>
             {
               itemDesc && <span className="description">{itemDesc}</span>
             }
@@ -93,7 +101,7 @@ const CardComponent = ({
           {
             (!itemHistoryUrl && !isHidePlaceBid && !isComing) && (
               <div className="card-place__bid-btn">
-                <ButtonComponent btnName={isBuy ? "Bought" : "Buy now"}
+                <ButtonComponent btnName={btnName}
                                  btnIcon={<MdShoppingBag/>}
                                  isDisable={isBuy || !buyItemFunc} btnEvent={buyItemFunc}/>
               </div>

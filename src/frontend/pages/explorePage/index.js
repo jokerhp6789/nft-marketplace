@@ -14,6 +14,7 @@ const ExplorePage = ({
                      }) => {
   const [loading, setLoading] = useState(true);
   const [items, setItems] = useState([]);
+  
   const loadMarketplaceItems = async () => {
     // Load all unsold items
     const itemCount = await marketplace.itemCount();
@@ -45,7 +46,7 @@ const ExplorePage = ({
   
   const buyMarketItem = async (item) => {
     await (await marketplace.purchaseItem(item.itemId, {value: item.totalPrice})).wait();
-    loadMarketplaceItems();
+    await loadMarketplaceItems();
   };
   
   useEffect(() => {
@@ -79,14 +80,14 @@ const ExplorePage = ({
         <div className="explore-page__container">
           {
             items.length > 0 ? items.map((val, index) => (
-              <div className="item">
+              <div key={index} className="item">
                 <CardComponent itemTitle={val.name}
                                itemImg={val.image}
                                isHidePlaceBid={false}
-                               isBuy={false}
+                               isBuy={false} btnName={"Buy now"}
                                itemPrice={ethers.utils.formatEther(val.totalPrice)}
                                itemDesc={val.description}
-                               buyItemFunc={() => buyMarketItem(val)}/>
+                               buyItemFunc={() => buyMarketItem(val)} itemId={val.itemId}/>
               </div>
             )) : (
               <EmptyResultComponent/>

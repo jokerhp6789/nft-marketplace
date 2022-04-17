@@ -18,6 +18,7 @@ import CreatePage from "./pages/createPage";
 import MyPurchasesPage from "./pages/myPurchasesPage";
 import MyListedPage from "./pages/listItemPage";
 import ExplorePage from "./pages/explorePage";
+import ItemDetailPage from "./pages/itemDetailPage";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -74,6 +75,8 @@ function App() {
             <Route path="/my-purchases" element={
               <MyPurchasesPage marketplace={marketplace} nft={nft} account={account} isNeedConnect={loading}/>
             }/>
+            <Route path="/explore/:itemId"
+                   element={<ItemDetailPage marketplace={marketplace} nft={nft} isNeedConnect={loading}/>}/>
           </Routes>
         </div>
         <>

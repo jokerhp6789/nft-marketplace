@@ -6,28 +6,29 @@
   padding-bottom: 24px;
 
   &__container {
-    display: grid;
+    @include flexBox(row, center, center);
+    flex-wrap: wrap;
     gap: 12px;
   }
 
   @include mobile {
-    &__container {
-      grid-template-columns: repeat(1, 1fr);
+    &__container .item {
+      width: 100%;
     }
   }
   @include tablet {
-    &__container {
-      grid-template-columns: repeat(2, 1fr);
+    &__container .item {
+      width: calc((100% / 2) - 12px);
     }
   }
   @include desktop {
-    &__container {
-      grid-template-columns: repeat(3, 1fr);
+    &__container .item {
+      width: calc((100% / 3) - 12px);
     }
   }
   @include wide-desktop {
-    &__container {
-      grid-template-columns: repeat(4, 1fr);
+    &__container .item {
+      width: calc((100% / 4) - 12px);
     }
   }
 }
