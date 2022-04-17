@@ -32,7 +32,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "yarn hardhat run src/backend/scripts/deploy.js --network localhost && react-scripts start",
+    "start": "react-scripts start",
+    "startDev": "yarn hardhat run src/backend/scripts/deploy.js --network localhost && react-scripts start",
     "startHardhat": "yarn hardhat node",
     "build": "react-scripts build",
     "test": "react-scripts test",

@@ -6,8 +6,10 @@ import ButtonComponent from "../buttonComponent";
 import {MdShoppingBag} from "react-icons/md";
 import {BiRefresh} from "react-icons/bi";
 import BadgeCompent from "../badgeComponent";
+import {useNavigate} from "react-router";
 
 const CardComponent = ({
+                         itemId,
                          likesOfItem,
                          itemImg,
                          itemTitle,
@@ -25,6 +27,7 @@ const CardComponent = ({
                          isComing = false,
                          isHidePlaceBid = true
                        }) => {
+  const navigate = useNavigate();
   const [isShowPlaceBid, setIsShowPlaceBid] = useState(false);
   return (
     <div className="card-container"
@@ -69,9 +72,11 @@ const CardComponent = ({
       <div className="card-content">
         <div className="card-content__title d-flex">
           <div className="title">
-            <a href={itemUrl}>{itemTitle}</a>
+            <p onClick={() => {
+              itemId && navigate(`/item-detail/${itemId}`);
+            }}>"{itemTitle}"</p>
             {
-              itemDesc && <span className="description">{itemDesc}</span>
+              itemDesc && <span className="description">"{itemDesc}"</span>
             }
           </div>
           {/*<div className="tags">*/}

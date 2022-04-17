@@ -1,0 +1,32 @@
+@import "../../styles/index";
+
+.item-detail__page {
+  padding-right: 0;
+  padding-left: 0;
+  padding-bottom: 24px;
+
+  &-left {
+    img {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 24px;
+    }
+  }
+
+  &-right {
+    .title {
+      font-size: $fz-heading-h2;
+      color: $white-color;
+      font-weight: 600;
+      text-align: left;
+      margin-bottom: 24px;
+    }
+
+    .description {
+      font-size: $fz-sm;
+      color: $dark-grey-color;
+      text-align: left;
+      line-height: 22px;
+    }
+  }
+}

@@ -6,6 +6,7 @@ import {TitlePage} from "../../components/titleComponent";
 import {ethers} from "ethers";
 import CardComponent from "../../components/cardComponent";
 import EmptyResultComponent from "../../components/emptyResultComponent";
+import {loadMarketplaceItems} from "../../services";
 
 const ExplorePage = ({
                        marketplace,
@@ -14,42 +15,20 @@ const ExplorePage = ({
                      }) => {
   const [loading, setLoading] = useState(true);
   const [items, setItems] = useState([]);
-  const loadMarketplaceItems = async () => {
-    // Load all unsold items
-    const itemCount = await marketplace.itemCount();
-    let items = [];
-    for (let i = 1; i <= itemCount; i++) {
-      const item = await marketplace.items(i);
-      if (!item.sold) {
-        // get uri url from nft contract
-        const uri = await nft.tokenURI(item.tokenId);
-        // use uri to fetch the nft metadata stored on ipfs
-        const response = await fetch(uri);
-        const metadata = await response.json();
-        // get total price of item (item price + fee)
-        const totalPrice = await marketplace.getTotalPrice(item.itemId);
-        // Add item to items array
-        items.push({
-          totalPrice,
-          itemId: item.itemId,
-          seller: item.seller,
-          name: metadata.name,
-          description: metadata.description,
-          image: metadata.image
-        });
-      }
-    }
+  
+  const loadItemFromMarketplace = async () => {
+    const response = await loadMarketplaceItems(marketplace, nft);
+    setItems(response);
     setLoading(false);
-    setItems(items);
   };
   
   const buyMarketItem = async (item) => {
     await (await marketplace.purchaseItem(item.itemId, {value: item.totalPrice})).wait();
-    loadMarketplaceItems();
+    await loadItemFromMarketplace();
   };
   
   useEffect(() => {
-    loadMarketplaceItems();
+    loadItemFromMarketplace();
   }, []);
   
   return isNeedConnect ? (
@@ -79,14 +58,14 @@ const ExplorePage = ({
         <div className="explore-page__container">
           {
             items.length > 0 ? items.map((val, index) => (
-              <div className="item">
+              <div key={index} className="item">
                 <CardComponent itemTitle={val.name}
                                itemImg={val.image}
                                isHidePlaceBid={false}
                                isBuy={false}
                                itemPrice={ethers.utils.formatEther(val.totalPrice)}
                                itemDesc={val.description}
-                               buyItemFunc={() => buyMarketItem(val)}/>
+                               buyItemFunc={() => buyMarketItem(val)} itemId={val.itemId}/>
               </div>
             )) : (
               <EmptyResultComponent/>

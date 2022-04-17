@@ -1,10 +1,14 @@
 import {Container} from "react-bootstrap";
 import React from "react";
 import {Link} from "react-router-dom";
-import {useLocation} from "react-router";
+import {useLocation, useParams} from "react-router";
 
-export const TitlePage = ({titleText}) => {
+export const TitlePage = ({
+                            titleText,
+                            paramsName
+                          }) => {
   const {pathname} = useLocation();
+  const params = useParams();
   return (
     <Container fluid className="title-page__container">
       <h2 className="title-page__text">{titleText}</h2>
@@ -12,7 +16,7 @@ export const TitlePage = ({titleText}) => {
         <Link to="/" className="title-page__breadcrumb-item">HOME</Link>
         {" / "}
         <Link to={`${pathname}`}
-              className="title-page__breadcrumb-item">{pathname?.replaceAll(/[/-]/g, " ").toUpperCase()}</Link>
+              className="title-page__breadcrumb-item">{pathname?.replace(params[`${paramsName}`], "").replaceAll(/[/-]/g, " ").toUpperCase()}</Link>
       </p>
     </Container>
   );
