@@ -61,7 +61,7 @@ function App() {
         <div>
           <Routes>
             <Route path="/" element={
-              <HomePage/>
+              <HomePage nft={nft} marketplace={marketplace} isNeedConnect={loading}/>
             }/>
             <Route path="/explore" element={
               <ExplorePage marketplace={marketplace} nft={nft} isNeedConnect={loading}/>
