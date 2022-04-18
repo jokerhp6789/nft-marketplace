@@ -133,7 +133,7 @@ const CreatePage = ({
                                itemUserAvt={exampleCard.creatorAvt}
                                itemUserProfileUrl={exampleCard.creatorProfileUrl}
                                likesOfItem={exampleCard.numberOfLike}
-                               itemUserName={exampleCard.creatorName} itemDesc={description || exampleCard.desc}/>
+                               itemUserName={exampleCard.creatorName} itemDesc={description || exampleCard.desc} btnName={"Buy now"}/>
               </div>
             </Col>
             <Col lg={8} md={12} sm={12} className="create-page__right">

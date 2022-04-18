@@ -1,7 +1,7 @@
 @import "../../styles/index";
 
 .today-pick {
-  min-height: 100vh;
+  //min-height: 100vh;
 
   &__sort {
     display: flex;
@@ -25,9 +25,19 @@
     display: inline-flex;
     gap: 12px;
     flex-wrap: wrap;
+    width: 100%;
 
     .item {
       width: calc(100% / 3 - 12px);
+    }
+
+    .empty-result__container {
+      padding: 0;
+      width: 100%;
+
+      .text {
+        @include font-size($fz-lg, $fz-xl);
+      }
     }
 
     @include mobile {

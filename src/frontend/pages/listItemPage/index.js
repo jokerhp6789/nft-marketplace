@@ -80,7 +80,7 @@ const MyListedPage = ({
         <TitlePage titleText="My listed items"/>
         <Container fluid={"xxl"}>
           {
-            (listedItems.length > 0 && soldItems.length > 0) ? (
+            (listedItems.length > 0 || soldItems.length > 0) ? (
               <>
                 <div className="my-listed__container">
                   <TitleComponent titleText="Listed" isHasExplore={true}/>

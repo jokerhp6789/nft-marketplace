@@ -3,6 +3,8 @@
 .banner {
   &-component {
     position: relative;
+    padding-top: 36px;
+    padding-bottom: 36px;
   }
 
   &-bg__gradient {
@@ -39,22 +41,6 @@
 
     &-bg__gradient {
       display: none;
-    }
-  }
-
-  @include tablet {
-    &-container {
-      min-height: unset;
-    }
-  }
-  @include desktop {
-    &-container {
-      min-height: unset;
-    }
-  }
-  @include wide-desktop {
-    &-container {
-      min-height: 100vh;
     }
   }
 }
